@@ -1,0 +1,248 @@
+{
+  "algorithm": "explicit_path_routing",
+  "algorithm_params": {
+    "plane_weight": 100.0,
+    "sat_weight": 1.0,
+    "segment_count": 2,
+    "segment_mode": "plane_then_inplane",
+    "segment_refresh_interval_steps": 3,
+    "shell_weight": 1000.0,
+    "time_step_minutes": 1.0
+  },
+  "constellation": {
+    "altitude_m": 550000,
+    "inclination_degree": 53,
+    "name": "Starlink-550",
+    "num_orbits": 22,
+    "num_sats_per_orbit": 72
+  },
+  "control_plane_sample": {
+    "planning_step_index": 0,
+    "sample_route_plans": [
+      {
+        "destination_ground_station_id": 1584,
+        "satellite_path": {
+          "planned_dst_sat_id": 159,
+          "satellite_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            87,
+            159
+          ]
+        },
+        "source_satellite_id": 0,
+        "waypoint_satellites": [
+          8,
+          159
+        ]
+      },
+      {
+        "destination_ground_station_id": 1585,
+        "satellite_path": {
+          "planned_dst_sat_id": 1105,
+          "satellite_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            1530,
+            1458,
+            1386,
+            1314,
+            1242,
+            1170,
+            1098,
+            1099,
+            1100,
+            1101,
+            1102,
+            1103,
+            1104,
+            1105
+          ]
+        },
+        "source_satellite_id": 0,
+        "waypoint_satellites": [
+          16,
+          1105
+        ]
+      },
+      {
+        "destination_ground_station_id": 1586,
+        "satellite_path": {
+          "planned_dst_sat_id": 458,
+          "satellite_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            90,
+            162,
+            234,
+            306,
+            378,
+            450,
+            451,
+            452,
+            453,
+            454,
+            455,
+            456,
+            457,
+            458
+          ]
+        },
+        "source_satellite_id": 0,
+        "waypoint_satellites": [
+          16,
+          458
+        ]
+      },
+      {
+        "destination_ground_station_id": 1587,
+        "satellite_path": {
+          "planned_dst_sat_id": 978,
+          "satellite_path": [
+            0,
+            71,
+            70,
+            69,
+            68,
+            67,
+            66,
+            65,
+            64,
+            63,
+            62,
+            61,
+            60,
+            59,
+            58,
+            57,
+            56,
+            55,
+            54,
+            1566,
+            1494,
+            1422,
+            1350,
+            1278,
+            1206,
+            1134,
+            1062,
+            990,
+            989,
+            988,
+            987,
+            986,
+            985,
+            984,
+            983,
+            982,
+            981,
+            980,
+            979,
+            978
+          ]
+        },
+        "source_satellite_id": 0,
+        "waypoint_satellites": [
+          1494,
+          978
+        ]
+      },
+      {
+        "destination_ground_station_id": 1588,
+        "satellite_path": {
+          "planned_dst_sat_id": 713,
+          "satellite_path": [
+            0,
+            71,
+            70,
+            69,
+            68,
+            67,
+            66,
+            65,
+            137,
+            209,
+            281,
+            353,
+            425,
+            497,
+            569,
+            641,
+            713
+          ]
+        },
+        "source_satellite_id": 0,
+        "waypoint_satellites": [
+          137,
+          713
+        ]
+      }
+    ],
+    "step_index": 0
+  },
+  "end_time_hours": 6.0,
+  "forwarding_state_definition": {
+    "default": "reachable GS destinations per satellite",
+    "explicit_path_routing": "centrally planned explicit destination entries (proxy: number of ground-station destinations)",
+    "predictive_link_state": "destination forwarding entries toward routable satellites (proxy: number of satellites)",
+    "shortest_path_link_state": "destination forwarding entries toward routable satellites (proxy: number of satellites)",
+    "topological_routing": "local neighbor-address forwarding entries (proxy: node degree)",
+    "traditional_segment_routing": "forwarding entries toward segment endpoints / routable satellites (proxy: number of satellites)"
+  },
+  "generated_at": "2026-05-10T23:05:15.947745",
+  "ground_stations": {
+    "count": 24,
+    "override_path": "/app/output/leopath/config/ground_stations_dense.yaml"
+  },
+  "isl_scenario": "grid",
+  "offset_ns": 0,
+  "time_step_minutes": 1.0
+}
