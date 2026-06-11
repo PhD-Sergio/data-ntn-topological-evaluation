@@ -1,6 +1,7 @@
 {
   "algorithm": "topological_routing",
   "algorithm_params": {
+    "distance_mode": "torus_weighted_pivot",
     "plane_weight": 100.0,
     "prediction_horizon_minutes": 5,
     "sat_weight": 1.0,
@@ -19,18 +20,26 @@
   "end_time_hours": 6.0,
   "forwarding_state_definition": {
     "default": "reachable GS destinations per satellite",
-    "explicit_path_routing": "centrally planned explicit destination entries (proxy: number of ground-station destinations)",
+    "explicit_path_routing": "local neighbor/interface entries on all satellites, plus destination-to-segment ingress bindings only on satellites that currently have attached ground stations; strict-adjacency header bytes are tracked separately in route plans",
     "predictive_link_state": "destination forwarding entries toward routable satellites (proxy: number of satellites)",
     "shortest_path_link_state": "destination forwarding entries toward routable satellites (proxy: number of satellites)",
     "topological_routing": "local neighbor-address forwarding entries (proxy: node degree)",
     "traditional_segment_routing": "forwarding entries toward segment endpoints / routable satellites (proxy: number of satellites)"
   },
-  "generated_at": "2026-05-11T00:18:55.153551",
+  "generated_at": "2026-05-22T08:33:22.540973",
   "ground_stations": {
     "count": 24,
     "override_path": "/app/output/leopath/config/ground_stations_dense.yaml"
   },
   "isl_scenario": "grid",
   "offset_ns": 0,
+  "satellite_forwarding_state_update_definition": {
+    "definition": "per-snapshot additions, deletions, or modifications of satellite-local forwarding-state units between consecutive snapshots",
+    "explicit_path_routing": "satellite-local GS delivery bindings plus ingress destination-to-path bindings on satellites that currently host GS attachments; packet-carried adjacency guidance is excluded",
+    "predictive_link_state": "destination-to-next-hop forwarding entries toward currently attached destination satellites",
+    "shortest_path_link_state": "destination-to-next-hop forwarding entries toward currently attached destination satellites",
+    "topological_routing": "mutable satellite-local forwarding state only; in the regular Ring/+Grid model this is limited to local GS delivery bindings and any explicit exception state, not algorithmic default forwarding",
+    "traditional_segment_routing": "destination-to-next-hop forwarding entries toward currently attached destination satellites"
+  },
   "time_step_minutes": 1.0
 }

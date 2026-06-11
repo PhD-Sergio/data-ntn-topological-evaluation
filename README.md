@@ -1,26 +1,23 @@
 # NTN LEO Satellite Routing Evaluation Data
 
-This repository contains the raw evaluation data supporting the research paper on topological routing for LEO satellite networks.
+This repository contains the raw evaluation data supporting the research paper on topological routing for LEO satellite networks (6G-RUPA).
 
 ## Overview
 
-This dataset contains performance metrics for multiple routing algorithms evaluated across different LEO satellite constellation configurations. The evaluation was conducted using the [LEOPath](https://github.com/Fundacio-i2CAT/LEOPath) simulation framework.
+This dataset contains performance metrics for the three routing families compared in the paper, evaluated across four LEO satellite constellation configurations under dynamic orbital evolution. The evaluation was conducted using the [LEOPath](https://github.com/Fundacio-i2CAT/LEOPath) simulation framework: six-hour windows sampled at one-minute intervals (360 topology snapshots per run), with 24 ground stations at major population centers (`ground_stations_dense` configuration) and all 552 ordered ground-station pairs as traffic endpoints.
 
 ## Constellations
 
 - **Starlink**: 22 planes × 72 satellites = 1,584 satellites
-- **OneWeb**: 18 planes × 36 satellites = 648 satellites  
+- **Kuiper**: 34 planes × 34 satellites = 1,156 satellites
+- **OneWeb**: 18 planes × 36 satellites = 648 satellites
 - **Telesat**: 27 planes × 13 satellites = 351 satellites
-- **Kuiper**: Various configurations
-- **Dense Synthetic**: 72 planes × 72 satellites = 5,184 satellites
 
 ## Routing Algorithms
 
-1. **Topological Routing** (proposed): Stateless, greedy forwarding based on topological addresses
-2. **Link-State Shortest Path**: Traditional OSPF-like routing
-3. **Predictive Link-State**: Link-state with prediction horizons (0m, 5m, 10m)
-4. **Segment Routing**: Constrained segment lists (k=2, k=3)
-5. **Traditional Segment Routing**: Segment routing variant
+1. **Topological Routing** (proposed): low-state greedy forwarding on topological addresses, using the pivot-weighted discrete-torus distance (`torus_weighted_pivot`)
+2. **Link-State Shortest Path** (`shortest_path_link_state`): destination-oriented shortest-path forwarding from full snapshot topology knowledge
+3. **Explicit-Path Routing** (`explicit_path_routing`): source-selected paths reused across R snapshots with dynamic final-egress repair
 
 ## ISL Scenarios
 
@@ -30,17 +27,20 @@ This dataset contains performance metrics for multiple routing algorithms evalua
 ## Metrics
 
 Each evaluation run produces:
-- `timestep_metrics.csv`: Per-timestep metrics (forwarding state size, churn, stretch, compute time)
-- `delta_metrics.csv`: Changes between consecutive timesteps
+- `timestep_metrics.csv`: Per-timestep metrics (forwarding state size, stretch, compute time)
+- `delta_metrics.csv`: Changes between consecutive timesteps, including installed forwarding-state updates (`sat_fstate_updates_*`) and route-instability companion metrics
 - `metadata.json`: Configuration and run parameters
+
+`summary.csv` at the repository root aggregates all runs (generated with `python -m leopath.experiments.aggregate_eval`).
 
 ### Key Metrics
 
 | Metric | Description |
 |--------|-------------|
-| Forwarding State | Number of routing entries per satellite |
+| Forwarding State | Number of forwarding-state units per satellite |
+| Routing Table Updates | Installed satellite-local state mutations per snapshot (`sat_fstate_updates_total_mean`) |
 | Churn | Rate of next-hop changes between timesteps |
-| Stretch | Ratio of actual path length to optimal path length |
+| Stretch | Ratio of delivered path length to shortest path length in the same snapshot |
 | Compute Time | Wall-clock time to process each snapshot |
 
 ## Citation
