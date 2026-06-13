@@ -23,6 +23,20 @@ This dataset contains performance metrics for the three routing families compare
 
 - **Ring**: 2 ISLs per satellite (intra-plane only)
 - **+Grid**: 4 ISLs per satellite (intra-plane + inter-plane)
+- **+Grid (seam/cylinder)**: +Grid with the cross-seam inter-plane wrap removed (counter-rotating planes), yielding a cylinder rather than a torus
+
+## Sampling-Interval Sensitivity
+
+The `sampling_sensitivity/` subtree re-runs the +Grid topological-forwarding (pivot)
+and link-state matrices over the same 6h horizon at three sampling intervals — 10s
+(`interval_10s`), 1min (`interval_1min`), and 5min (`interval_5min`) — to confirm
+the main-matrix results are not artifacts of the 1-min sampling choice. Runs are
+distinguished by `time_step_minutes` in `summary_sampling_sensitivity.csv` (aggregated
+separately so the main `summary.csv` is unaffected). Forwarding-state size and
+delivered-path stretch are sampling-invariant; the link-state per-hour update rate
+grows as sampling tightens while the topological rate stays negligible. The two
+largest 10s link-state cases (Kuiper, Starlink) and Starlink-10s topological were
+not run for compute reasons; the trend is already monotone.
 
 ## Metrics
 

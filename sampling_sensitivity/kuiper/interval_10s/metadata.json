@@ -1,0 +1,52 @@
+{
+  "algorithm": "topological_routing",
+  "algorithm_params": {
+    "distance_mode": "torus_weighted_pivot",
+    "plane_weight": 100.0,
+    "prediction_horizon_minutes": 5.0,
+    "sat_weight": 1.0,
+    "segment_count": 2,
+    "segment_mode": "plane_then_inplane",
+    "shell_weight": 1000.0,
+    "time_step_minutes": 0.16667
+  },
+  "constellation": {
+    "altitude_m": 630000,
+    "inclination_degree": 51.9,
+    "name": "Kuiper-synthetic",
+    "num_orbits": 34,
+    "num_sats_per_orbit": 34
+  },
+  "end_time_hours": 6.0,
+  "forwarding_state_definition": {
+    "default": "reachable GS destinations per satellite",
+    "dra_routing": "local neighbor-address forwarding entries (proxy: node degree); DRA-style hop-only logical-coordinate baseline",
+    "explicit_path_routing": "local neighbor/interface entries on all satellites, plus destination-to-segment ingress bindings only on satellites that currently have attached ground stations; strict-adjacency header bytes are tracked separately in route plans",
+    "predictive_link_state": "destination forwarding entries toward routable satellites (proxy: number of satellites)",
+    "shortest_path_link_state": "destination forwarding entries toward routable satellites (proxy: number of satellites)",
+    "topological_routing": "local neighbor-address forwarding entries (proxy: node degree)",
+    "traditional_segment_routing": "forwarding entries toward segment endpoints / routable satellites (proxy: number of satellites)"
+  },
+  "generated_at": "2026-06-12T19:19:00.589209",
+  "ground_stations": {
+    "count": 24,
+    "override_path": "leopath/config/ground_stations_dense.yaml"
+  },
+  "isl_scenario": "grid",
+  "offset_ns": 0,
+  "packet_guidance_definition": {
+    "dynamic_egress_repair": "optional loose-final-egress repair for explicit paths: the cached strict core path terminates at its planned anchor, then final GS delivery is resolved toward the current visible egress",
+    "srv6_srh_bytes": "SRv6 SRH-equivalent overhead for the same active strict adjacency stack, excluding the IPv6 base header: 8 + 16 bytes per carried adjacency SID, zero for direct local delivery",
+    "strict_header_bytes": "compact proxy overhead for active GS-to-GS traffic only: fixed 20-byte metadata plus 32-bit adjacency SIDs, zero for direct local delivery"
+  },
+  "satellite_forwarding_state_update_definition": {
+    "definition": "per-snapshot additions, deletions, or modifications of satellite-local forwarding-state units between consecutive snapshots",
+    "dra_routing": "mutable satellite-local forwarding state only, as for topological_routing; the families differ solely in the distance metric used for default forwarding",
+    "explicit_path_routing": "satellite-local GS delivery bindings plus ingress destination-to-path bindings on satellites that currently host GS attachments; packet-carried adjacency guidance is excluded",
+    "predictive_link_state": "destination-to-next-hop forwarding entries toward currently attached destination satellites",
+    "shortest_path_link_state": "destination-to-next-hop forwarding entries toward currently attached destination satellites",
+    "topological_routing": "mutable satellite-local forwarding state only; in the regular Ring/+Grid model this is limited to local GS delivery bindings and any explicit exception state, not algorithmic default forwarding",
+    "traditional_segment_routing": "destination-to-next-hop forwarding entries toward currently attached destination satellites"
+  },
+  "time_step_minutes": 0.16667
+}
