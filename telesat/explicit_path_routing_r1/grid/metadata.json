@@ -1,0 +1,209 @@
+{
+ "algorithm": "explicit_path_routing_r1",
+ "algorithm_params": {
+  "segment_count": 2,
+  "segment_refresh_interval_steps": 1,
+  "time_step_minutes": 1.0
+ },
+ "constellation": {
+  "altitude_m": 1016000,
+  "inclination_degree": 98.98,
+  "name": "Telesat-synthetic",
+  "num_orbits": 27,
+  "num_sats_per_orbit": 13
+ },
+ "control_plane_sample": {
+  "effective_refresh_interval_steps": 1,
+  "planning_step_index": 0,
+  "sample_route_plans": [
+   {
+    "adjacency_sid_list": [
+     1,
+     14,
+     27,
+     40,
+     53,
+     66,
+     79,
+     92
+    ],
+    "backup_adjacency_sid_list": [],
+    "destination_ground_station_id": 351,
+    "planned_dst_sat_id": 92,
+    "satellite_path": [
+     0,
+     1,
+     14,
+     27,
+     40,
+     53,
+     66,
+     79,
+     92
+    ],
+    "source_satellite_id": 0,
+    "srv6_srh_bytes": 136,
+    "strict_header_bytes": 52,
+    "waypoint_satellites": [
+     40,
+     92
+    ]
+   },
+   {
+    "adjacency_sid_list": [
+     14,
+     27,
+     40,
+     53,
+     66,
+     79,
+     92
+    ],
+    "backup_adjacency_sid_list": [],
+    "destination_ground_station_id": 351,
+    "planned_dst_sat_id": 92,
+    "satellite_path": [
+     1,
+     14,
+     27,
+     40,
+     53,
+     66,
+     79,
+     92
+    ],
+    "source_satellite_id": 1,
+    "srv6_srh_bytes": 120,
+    "strict_header_bytes": 48,
+    "waypoint_satellites": [
+     53,
+     92
+    ]
+   },
+   {
+    "adjacency_sid_list": [
+     15,
+     28,
+     41,
+     54,
+     67,
+     80,
+     93,
+     106
+    ],
+    "backup_adjacency_sid_list": [],
+    "destination_ground_station_id": 351,
+    "planned_dst_sat_id": 106,
+    "satellite_path": [
+     2,
+     15,
+     28,
+     41,
+     54,
+     67,
+     80,
+     93,
+     106
+    ],
+    "source_satellite_id": 2,
+    "srv6_srh_bytes": 136,
+    "strict_header_bytes": 52,
+    "waypoint_satellites": [
+     54,
+     106
+    ]
+   },
+   {
+    "adjacency_sid_list": [
+     341,
+     328,
+     315,
+     302,
+     289,
+     276,
+     277
+    ],
+    "backup_adjacency_sid_list": [],
+    "destination_ground_station_id": 351,
+    "planned_dst_sat_id": 277,
+    "satellite_path": [
+     3,
+     341,
+     328,
+     315,
+     302,
+     289,
+     276,
+     277
+    ],
+    "source_satellite_id": 3,
+    "srv6_srh_bytes": 120,
+    "strict_header_bytes": 48,
+    "waypoint_satellites": [
+     302,
+     277
+    ]
+   },
+   {
+    "adjacency_sid_list": [
+     342,
+     329,
+     316,
+     303,
+     290,
+     277
+    ],
+    "backup_adjacency_sid_list": [],
+    "destination_ground_station_id": 351,
+    "planned_dst_sat_id": 277,
+    "satellite_path": [
+     4,
+     342,
+     329,
+     316,
+     303,
+     290,
+     277
+    ],
+    "source_satellite_id": 4,
+    "srv6_srh_bytes": 104,
+    "strict_header_bytes": 44,
+    "waypoint_satellites": [
+     316,
+     277
+    ]
+   }
+  ],
+  "step_index": 0,
+  "used_cached_route_plans": false
+ },
+ "end_time_hours": 6.0,
+ "forwarding_state_definition": {
+  "default": "reachable GS destinations per satellite",
+  "explicit_path_routing": "local neighbor/interface entries on all satellites, plus destination-to-segment ingress bindings only on satellites that currently have attached ground stations; strict-adjacency header bytes are tracked separately in route plans",
+  "predictive_link_state": "destination forwarding entries toward routable satellites (proxy: number of satellites)",
+  "shortest_path_link_state": "destination forwarding entries toward routable satellites (proxy: number of satellites)",
+  "topological_routing": "local neighbor-address forwarding entries (proxy: node degree)",
+  "traditional_segment_routing": "forwarding entries toward segment endpoints / routable satellites (proxy: number of satellites)"
+ },
+ "generated_at": "2026-05-22T11:16:07.143983",
+ "ground_stations": {
+  "count": 24,
+  "override_path": "/app/output/leopath/config/ground_stations_dense.yaml"
+ },
+ "isl_scenario": "grid",
+ "offset_ns": 0,
+ "packet_guidance_definition": {
+  "srv6_srh_bytes": "SRv6 SRH-equivalent overhead for the same active strict adjacency stack, excluding the IPv6 base header: 8 + 16 bytes per carried adjacency SID, zero for direct local delivery",
+  "strict_header_bytes": "compact proxy overhead for active GS-to-GS traffic only: fixed 20-byte metadata plus 32-bit adjacency SIDs, zero for direct local delivery"
+ },
+ "satellite_forwarding_state_update_definition": {
+  "definition": "per-snapshot additions, deletions, or modifications of satellite-local forwarding-state units between consecutive snapshots",
+  "explicit_path_routing": "satellite-local GS delivery bindings plus ingress destination-to-path bindings on satellites that currently host GS attachments; packet-carried adjacency guidance is excluded",
+  "predictive_link_state": "destination-to-next-hop forwarding entries toward currently attached destination satellites",
+  "shortest_path_link_state": "destination-to-next-hop forwarding entries toward currently attached destination satellites",
+  "topological_routing": "mutable satellite-local forwarding state only; in the regular Ring/+Grid model this is limited to local GS delivery bindings and any explicit exception state, not algorithmic default forwarding",
+  "traditional_segment_routing": "destination-to-next-hop forwarding entries toward currently attached destination satellites"
+ },
+ "time_step_minutes": 1.0
+}
