@@ -24,10 +24,17 @@ Re-run of the evaluation matrix with state accounting.
 Robustness sweep with injected failures, on +Grid for one hour at one-minute steps with the
 same 24 ground stations.
 
-Conditions: no failures; ISL loss at stationary rates of 1, 2, 5, 10 and 20% (mean outage
-10 min); satellite outage at 0.5, 1, 2 and 5% (mean outage 60 min); contiguous voids of 2×2,
-4×4 and 8×8 satellites; a two-boundary plane cut; polar deactivation of inter-plane links
-above 75° and 60°. Random conditions use seeds 1 to 5 and deterministic ones use seed 1.
+The conditions go from mild to structural. ISL loss drops single laser links at stationary
+rates of 1, 2, 5, 10 and 20% (mean outage 10 min), and satellite outage takes whole satellites
+down, with every link they had, at 0.5, 1, 2 and 5% (mean outage 60 min). A void kills a square
+block of neighbouring satellites, 2×2, 4×4 or 8×8, for the whole hour; topological forwarding
+finds it hard because the distance estimate still points through the hole. A cut removes every
+inter-plane link across two opposite plane boundaries, so the grid splits into two halves that no
+link joins even though every satellite keeps working. Polar deactivation switches off inter-plane
+links above 75° or 60° latitude and only bites on Telesat and OneWeb, since Starlink and Kuiper
+stay below 60°. Random conditions use seeds 1 to 5 and deterministic ones seed 1. LEOPath's
+`docs/evaluation.md` has diagrams of the void and the cut, and the failure causes behind
+`failure_share_*`.
 
 The failure pattern depends only on the seed and the failure parameters, so every variant
 of a given seed routes over exactly the same failures, even though the variants were run
