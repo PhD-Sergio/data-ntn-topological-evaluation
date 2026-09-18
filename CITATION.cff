@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "NTN LEO Satellite Routing Evaluation Data"
+abstract: >-
+  Raw evaluation data supporting the paper "Topological Forwarding for LEO
+  Constellations: A Scope-Specific Routing Policy in a Recursive User-Plane
+  Architecture". Contains forwarding-state, routing-update, route-instability,
+  delivery, and path-stretch metrics for link-state, topological, and
+  explicit-path routing families across four LEO constellations (Starlink,
+  OneWeb, Kuiper, Telesat) under Ring and +Grid ISL regimes, generated with the
+  LEOPath simulator.
+type: dataset
+version: 1.0.0
+date-released: 2026-06-17
+license: CC-BY-4.0
+repository-code: "https://github.com/PhD-Sergio/data-ntn-topological-evaluation"
+authors:
+  - given-names: Sergio
+    family-names: Giménez-Antón
+    affiliation: "i2CAT Foundation; Universitat Politècnica de Catalunya (UPC)"
+  - given-names: Eduard
+    family-names: Grasa
+    affiliation: "i2CAT Foundation"
+  - given-names: Jordi
+    family-names: Perelló
+    affiliation: "Universitat Politècnica de Catalunya (UPC)"
+  - given-names: Maryan
+    family-names: Rizinski
+    affiliation: "Boston University"
+  - given-names: Mohammadreza
+    family-names: Mosahebfard
+    affiliation: "i2CAT Foundation"
+  - given-names: John
+    family-names: Day
+    affiliation: "Boston University"
+  - given-names: Lubomir
+    family-names: Chitkushev
+    affiliation: "Boston University"
+keywords:
+  - LEO satellite networks
+  - topological routing
+  - 6G-RUPA
+  - non-terrestrial networks
+  - routing evaluation dataset
