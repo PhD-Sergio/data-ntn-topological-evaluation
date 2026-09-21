@@ -1,8 +1,16 @@
 # Revision data
 
 Aggregated results of the two evaluation campaigns run for the major revision of
-COMNET-D-26-04044. Raw per-run outputs (`timestep_metrics.csv`, `delta_metrics.csv`,
-`metadata.json`) are kept on the evaluation server and are not copied here yet.
+COMNET-D-26-04044. Every run here comes from one LEOPath build, `3efafaa`, on constellation
+configurations corrected against their FCC filings: Starlink as 72 planes of 22 satellites
+rather than 22 of 72, mean motions that fly the altitude each config declares, and OneWeb as
+12 planes spread over 180 degrees of right ascension the way it actually flies. The earlier
+results, and the configurations that produced them, are preserved under the `pre-config-fix`
+tag in this repository and in LEOPath.
+
+The state-accounting campaign's raw per-run outputs are the ones in this repository's root.
+The failure sweep's 2 816 raw run directories stay on the evaluation server; only its
+aggregates are here.
 
 Rates are pooled over each run's snapshots (delivered pairs over deliverable pairs)
 and stretch is weighted by the pairs it was measured over.
@@ -11,12 +19,13 @@ and stretch is weighted by the pairs it was measured over.
 
 Re-run of the evaluation matrix with state accounting.
 
-- Code: LEOPath `9ac211f` (state counters by category, link-state database counters).
+- Code: LEOPath `3efafaa`.
 - Matrix: Telesat, OneWeb, Kuiper, Starlink × topological (pivot), DRA, explicit path,
   link-state × Ring, +Grid, +Grid open seam. Six hours at one-minute steps, 24 ground
   stations (`ground_stations_dense`), 552 ordered pairs.
 - `summary.csv`: `python -m leopath.experiments.aggregate_eval`, same format as the
-  dataset's root `summary.csv`.
+  dataset's root `summary.csv`. These are the same runs as the repository root, so the root
+  `summary.csv` supersedes this copy and the two agree.
 - `matrix_runs.csv`, `matrix_tables.md`: `python -m leopath.experiments.state_accounting_tables`.
 
 ## `failure_sweep/`
@@ -36,41 +45,35 @@ stay below 60°. Random conditions use seeds 1 to 5 and deterministic ones seed 
 `docs/evaluation.md` has diagrams of the void and the cut, and the failure causes behind
 `failure_share_*`.
 
-The failure pattern depends only on the seed and the failure parameters, so every variant
-of a given seed routes over exactly the same failures, even though the variants were run
-from four different LEOPath builds:
+The failure pattern depends only on the seed and the failure parameters, so every variant of a
+given seed routes over exactly the same failures. The variants differ only in how they forward:
 
-| variant | routing | build |
-|---|---|---|
-| `link_state` | shortest-path link-state | `ba2f20f` |
-| `explicit_r1`, `explicit_r15` | explicit paths refreshed every 1 or 15 snapshots, with backup adjacencies | `ba2f20f` |
-| `dra` | DRA hop-only forwarding | `ba2f20f` |
-| `topological_nominal` | pivot geometry from the failure-free graph, no guard | `ba2f20f` |
-| `topological_observed` | pivot geometry from the graph with failures | `ba2f20f` |
-| `topological_nominal_progress`, `topological_observed_progress` | the two above plus the progress guard | `f1dd6d5` |
-| `topological_nominal_progress_repair` | nominal geometry, guard, three-hop local repair | `3b927e7` |
-| `topological_nominal_progress_exceptions` | nominal geometry, guard, exception entries | `2aea3c8` |
-| `topological_nominal_progress_repair_exceptions` | nominal geometry, guard, local repair and exception entries | `2aea3c8` |
+| variant | routing |
+|---|---|
+| `link_state` | shortest-path link-state |
+| `explicit_r1`, `explicit_r15` | explicit paths refreshed every 1 or 15 snapshots, with backup adjacencies |
+| `dra` | DRA hop-only forwarding |
+| `topological_nominal` | pivot geometry from the failure-free graph, no guard |
+| `topological_observed` | pivot geometry from the graph with failures |
+| `topological_nominal_progress`, `topological_observed_progress` | the two above plus the progress guard |
+| `topological_nominal_progress_repair` | nominal geometry, guard, three-hop local repair |
+| `topological_nominal_progress_exceptions` | nominal geometry, guard, exception entries |
+| `topological_nominal_progress_repair_exceptions` | nominal geometry, guard, local repair and exception entries |
 
-The later builds didn't touch the failure injection or how delivery and stretch are measured;
-they added routing options and new counters. Runs from `f1dd6d5` on record their Docker image
-tag as `code_version` in `metadata.json`.
+Every run records its Docker image tag as `code_version` in `metadata.json`.
 
 `failure_sweep_seeds.csv` has one row per run, pooled over its snapshots.
 `failure_sweep_summary.csv` combines the seeds of each constellation, condition and variant
 into a mean and a 95% confidence half-width, and `failure_sweep_tables.md` renders it per
 constellation: delivery, the delivery gap to link-state paired by seed, stretch, the dominant
-failure cause, loops, and exception entries with their share of link-state's table. All three
-come from `python -m leopath.experiments.summarize_failure_sweep --input <sweep> --output-dir <out>`;
-the version that reads the exception counters is on LEOPath branch `feat/failure-injection`
-after `2aea3c8`.
+failure cause, loops, and exception entries with their share of link-state's table. All three come from
+`python -m leopath.experiments.summarize_failure_sweep --input <sweep> --output-dir <out>`.
 
 Some columns need a note:
 
 - `live_minima_per_snapshot` counts local minima of the progress guard at satellites that still
-  have a live link. Runs from `f1dd6d5` and `3b927e7` predate the fix that set dead satellites
-  apart, so the script subtracts one decision per ground station per dead satellite for them.
-  Every snapshot in this sweep had full ground visibility, and that makes the subtraction exact.
+  have a live link. Decisions at satellites with no live link are counted apart, so no correction
+  is applied to these runs.
 - `exception_entries_per_snapshot` is what the grow placement installs; entries go only where a
   walk breaks. `exception_entries_one_pass_per_snapshot` is its upper bound, one entry for every
   satellite whose rule-based walk fails.
@@ -79,5 +82,4 @@ Some columns need a note:
 - `exception_hops_to_failure_mean` weights each entry's hop distance to the nearest satellite
   that lost a link.
 - `failure_events_per_snapshot` counts failures that appeared or cleared since the previous
-  snapshot, with the first snapshot counting every failure present. Only the `2aea3c8` runs
-  report it, but since the pattern is shared, it holds for every variant of the same seed.
+  snapshot, with the first snapshot counting every failure present.
