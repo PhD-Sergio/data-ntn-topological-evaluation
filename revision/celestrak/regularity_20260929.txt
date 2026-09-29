@@ -1,0 +1,35 @@
+starlink_20260929.tle  inc 53.0±0.5  alt 460.0±4.0 km  at 2026-09-29 18:55 UTC
+  satellites 3178   planes 118   sats/plane min 3 median 30.0 max 64
+  plane node spacing: median 2.27 deg, relative deviation p50 19.9% max 220%
+  in-plane slot spacing vs 360/S: p50 6.3%  p90 73.9%  max 674%
+  in-plane neighbour distance vs ideal rail: p50 6.3%  p90 75.1%  max 499%
+starlink_20260929.tle  inc 53.0±0.5  alt 471.0±4.0 km  at 2026-09-29 18:55 UTC
+  satellites 985   planes 70   sats/plane min 3 median 9.0 max 43
+  plane node spacing: median 3.34 deg, relative deviation p50 30.6% max 373%
+  in-plane slot spacing vs 360/S: p50 75.5%  p90 107.1%  max 357%
+  in-plane neighbour distance vs ideal rail: p50 75.6%  p90 99.7%  max 261%
+starlink_20260929.tle  inc 43.0±0.5  alt 480.0±10.0 km  at 2026-09-29 18:55 UTC
+  satellites 3232   planes 98   sats/plane min 3 median 32.0 max 51
+  plane node spacing: median 3.63 deg, relative deviation p50 2.2% max 101%
+  in-plane slot spacing vs 360/S: p50 18.5%  p90 54.9%  max 399%
+  in-plane neighbour distance vs ideal rail: p50 18.2%  p90 53.5%  max 334%
+starlink_20260929.tle  inc 97.6±0.8  alt 470.0±10.0 km  at 2026-09-29 18:55 UTC
+  satellites 1285   planes 43   sats/plane min 3 median 25 max 48
+  plane node spacing: median 4.29 deg, relative deviation p50 20.0% max 982%
+  in-plane slot spacing vs 360/S: p50 8.2%  p90 24.0%  max 400%
+  in-plane neighbour distance vs ideal rail: p50 9.2%  p90 24.0%  max 352%
+starlink_20260929.tle  inc 70.0±0.5  alt 570.0±10.0 km  at 2026-09-29 18:55 UTC
+  satellites 334   planes 19   sats/plane min 3 median 17 max 27
+  plane node spacing: median 10.05 deg, relative deviation p50 84.4% max 298%
+  in-plane slot spacing vs 360/S: p50 55.8%  p90 94.4%  max 251%
+  in-plane neighbour distance vs ideal rail: p50 55.3%  p90 94.4%  max 212%
+kuiper_20260929.tle  inc 51.9±0.5  alt 630.0±10.0 km  at 2026-09-29 18:55 UTC
+  satellites 359   planes 39   sats/plane min 3 median 4 max 4
+  plane node spacing: median 2.50 deg, relative deviation p50 0.7% max 2906%
+  in-plane slot spacing vs 360/S: p50 0.2%  p90 39.6%  max 88%
+  in-plane neighbour distance vs ideal rail: p50 0.1%  p90 18.3%  max 86%
+oneweb_20260929.tle  inc 87.9±0.5  alt 1200.0±30.0 km  at 2026-09-29 18:55 UTC
+  satellites 646   planes 12   sats/plane min 50 median 53.0 max 61
+  plane node spacing: median 15.23 deg, relative deviation p50 0.3% max 1165%
+  in-plane slot spacing vs 360/S: p50 17.6%  p90 46.2%  max 99%
+  in-plane neighbour distance vs ideal rail: p50 17.6%  p90 46.1%  max 98%
