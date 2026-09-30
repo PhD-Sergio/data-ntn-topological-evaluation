@@ -1,0 +1,4 @@
+starlink_20260929.tle 43°@480km: 95 planes (>=8 sats) | fitted S: 51 (mode), range 51-102 | slot occupancy median 63% | sats sharing a slot 4 | residual to slot p50 0.19° p90 0.41° (= 23 / 49 km along track) | half-slot 3.53°
+starlink_20260929.tle 53°@460km: 111 planes (>=8 sats) | fitted S: 31 (mode), range 31-124 | slot occupancy median 81% | sats sharing a slot 80 | residual to slot p50 0.14° p90 0.41° (= 17 / 48 km along track) | half-slot 5.81°
+starlink_20260929.tle 97.6°@470km: 41 planes (>=8 sats) | fitted S: 48 (mode), range 24-48 | slot occupancy median 96% | sats sharing a slot 4 | residual to slot p50 0.20° p90 0.45° (= 24 / 54 km along track) | half-slot 3.75°
+oneweb_20260929.tle 87.9°@1200km: 12 planes (>=8 sats) | fitted S: 45 (mode), range 45-48 | slot occupancy median 100% | sats sharing a slot 96 | residual to slot p50 0.11° p90 0.75° (= 14 / 100 km along track) | half-slot 4.00°
