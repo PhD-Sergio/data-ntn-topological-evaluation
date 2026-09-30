@@ -1,12 +1,14 @@
 # Revision data
 
-Aggregated results of the two evaluation campaigns run for the major revision of
-COMNET-D-26-04044. Every run here comes from one LEOPath build, `3efafaa`, on constellation
-configurations corrected against their FCC filings: Starlink as 72 planes of 22 satellites
-rather than 22 of 72, mean motions that fly the altitude each config declares, and OneWeb as
-12 planes spread over 180 degrees of right ascension the way it actually flies. The earlier
-results, and the configurations that produced them, are preserved under the `pre-config-fix`
-tag in this repository and in LEOPath.
+Aggregated results of the evaluation campaigns run for the major revision of
+COMNET-D-26-04044. The two main campaigns, `state_accounting/` and `failure_sweep/`, come from
+one LEOPath build, `3efafaa`, on constellation configurations corrected against their FCC
+filings: Starlink as 72 planes of 22 satellites rather than 22 of 72, mean motions that fly
+the altitude each config declares, and OneWeb as 12 planes spread over 180 degrees of right
+ascension the way it actually flies. The earlier results, and the configurations that
+produced them, are preserved under the `pre-config-fix` tag in this repository and in LEOPath.
+The focused campaigns that followed each name their own build below; every run's
+`metadata.json` on the server keeps the image tag as `code_version`.
 
 The state-accounting campaign's raw per-run outputs are the ones in this repository's root.
 The failure sweep's 2 816 raw run directories stay on the evaluation server; only its
@@ -83,3 +85,87 @@ Some columns need a note:
   that lost a link.
 - `failure_events_per_snapshot` counts failures that appeared or cleared since the previous
   snapshot, with the first snapshot counting every failure present.
+
+## `gs_multihoming/`
+
+Superseded; kept for the record. A first multihoming sweep (LEOPath `591510e`, K = 1, 2, 4)
+in which transit satellites could still minimise over all K of a station's attachments, so its
+routing numbers are an optimistic any-attachment bound rather than one fixed address per
+packet. `gs_address_policy/` replaces them. Its radio-assignment counts (attachments assigned,
+shortfall under the exclusive policy) still stand.
+
+## `gs_address_policy/`
+
+Which of a multihomed station's K addresses its flows use, under one address per packet.
+
+- Code: LEOPath `a41e5e7` (image `leopath:9d76b6c-perflow`), on `6genablers-dlt-1`,
+  `~/leopath-addr-sweep-9d76b6c-perflow`. 312 runs, none failed.
+- Matrix: four constellations, no failures and 5% ISL loss over seeds 1-5, link-state and
+  topological routing, K = 1, 2, 4 under `sticky_nearest`, `nearest` and `per_flow_pair`.
+- Every run walks fixed addresses (`fixed_address_forwarding` = 1) with no destination
+  switching. Sticky K = 4 cuts ground-station renumbering by 32-45% per minute while stretch
+  moves by -1% to +4%; `nearest` equals K = 1 whatever K is; only `per_flow_pair`, which goes
+  beyond RINA, removes the stretch attachment addressing costs.
+
+## `attach_robustness/`
+
+The failure sweep repeated under attachment addressing, K = 1.
+
+- Code: as `gs_address_policy/`; `~/leopath-attach-robustness-9d76b6c`. 1 024 runs, none
+  failed.
+- Matrix: four constellations, every failure condition of `failure_sweep/`, link-state with
+  visibility and with attachment addressing, and the topological scheme (guard and exceptions,
+  with and without the three-hop repair) under attachment addressing.
+- The scheme delivers exactly what link-state delivers with the same addresses in all 64
+  cells. Exception entries stay at 0.6-0.9% of link-state's table at 5% ISL loss. A cut drops
+  both to 0.49-0.72, because a station's attachment satellite can sit across the partition;
+  visibility addressing keeps 1.0 there.
+
+## `derived_geometry/`
+
+Measured against derived pivot geometry: every ISL length beyond the first hop computed from
+the shell's Walker constants and the clock instead of taken from SGP4.
+
+- Code: LEOPath `a41e5e7` plus the derived-geometry code committed in `afa14cb` (image
+  `leopath:a41e5e7-derived`); `~/leopath-derived-gate-a41e5e7`. 1 536 runs, none failed; the
+  256 `link_state` runs were copied in from `attach_robustness/`.
+- Matrix: four constellations, every failure condition, topological routing with measured and
+  derived geometry, plain and with the full scheme, under both address models.
+- Deriving instead of measuring changes delivery of the full scheme by nothing and of the plain
+  rule by at most 0.00044, and distance stretch by at most 0.0033. A satellite holds 7
+  constants instead of one length per ISL.
+
+## `shell_scaling/`
+
+- `per_shell_state.csv`: 11 shells of Starlink Gen1, Kuiper and Starlink Gen2 as filed (LEOPath
+  `leopath/config/shells/`), each run as its own layer with link-state, measured-geometry and
+  derived-geometry topological routing, no failures, ten minutes. Code `afa14cb` (image
+  `leopath:brick-dev2`), `~/leopath-shells-brickdev2`, 33 runs, none failed. Columns give the
+  per-satellite FIB, link-state's LSDB, the geometry each topological variant needs a
+  satellite to hold, the table cache and its build time, delivery and forwarding stretch.
+- `pivot_benchmark.csv`: `scripts/benchmark_pivot_estimators.py` on all 12 shells, table build
+  time, query time with and without tables, and a 200-pair agreement check (no mismatches).
+  Measured on a loaded server; the timings only compare with each other.
+
+## `brick_wall/`
+
+Three laser terminals per satellite (LEOPath `docs/isl-topology.md`).
+
+- Code: `afa14cb` (image `leopath:brick-dev2`), derived geometry, one hour at one-minute steps,
+  every failure condition.
+- `split_a/`: cross-plane links staggered, Starlink, Kuiper and OneWeb, 829 runs
+  (`~/leopath-brick-sweep-a`). `split_b/`: in-plane links staggered, Starlink and Kuiper,
+  512 runs (`~/leopath-brick-sweep-b`). None failed.
+- Visibility link-state was dropped from the matrix partway through split a to free the
+  server, so only some of its cells exist; every comparison uses `link_state_attach`.
+- The scheme delivers what link-state delivers under attachment addressing and 1.0 under
+  visibility addressing in every cell. The missing terminal costs exception state: 4.0-4.6% of
+  link-state's table at 5% ISL loss against 0.6-0.9% on +Grid, about 21% at 20% loss.
+
+## `celestrak/`
+
+CelesTrak TLE snapshots of Starlink, OneWeb and Kuiper taken on 29 September 2026, with the
+outputs of LEOPath's `scripts/celestrak_shell_geometry.py` (`regularity_20260929.txt`) and
+`scripts/celestrak_lattice_fit.py` (`lattice_fit_20260929.txt`). Most of Starlink flies 80-90 km
+below its filings in different plane counts; where shells have settled, planes are evenly
+spaced and satellites sit within about 20 km of a slot lattice with empty slots.
