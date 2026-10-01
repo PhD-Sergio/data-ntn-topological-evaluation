@@ -169,3 +169,27 @@ outputs of LEOPath's `scripts/celestrak_shell_geometry.py` (`regularity_20260929
 `scripts/celestrak_lattice_fit.py` (`lattice_fit_20260929.txt`). Most of Starlink flies 80-90 km
 below its filings in different plane counts; where shells have settled, planes are evenly
 spaced and satellites sit within about 20 km of a slot lattice with empty slots.
+
+## `end_to_end_delay/`
+
+One-way propagation delay per delivered pair (path length over the speed of light, ground links included), its lower bound and the gap, in milliseconds. Queueing, processing and transmission delay are not modelled.
+
+- Code: LEOPath `1a2b231` content (image `leopath:delay-dev`), `~/leopath-delay-sweep` on `6genablers-dlt-1`. 168 runs, none failed.
+- Matrix: four constellations, no failures and 5% ISL loss over seeds 1-5, link-state with visibility and attachment addressing, topological with visibility addressing and the full scheme under attachment addressing, DRA, explicit-path replanned every 1 and 15 minutes.
+- Without failures topological forwarding matches link-state to within 0.02 ms; DRA adds 1.4-4.0 ms and 15-minute explicit-path 7.6-10.6 ms. Attachment addressing adds 7-37 ms on average for link-state and topological alike.
+- `attachment_analysis/`: outputs of LEOPath's `scripts/pass_direction_check.py` and `scripts/decompose_attachment_cost.py`, which trace that cost to the two halves of a Walker delta shell.
+
+## `attachment_direction/`
+
+Pass-direction-aware attachment and the `requester_aware` address policy.
+
+- Code: LEOPath `1a2b231` (image `leopath:dir-dev`), `~/leopath-dir-sweep`. 192 runs, none failed.
+- Matrix: four constellations, no failures and 5% ISL loss over seeds 1-5, link-state and topological (derived geometry, plain rule), K = 1 `nearest`, K = 1 `nearest_ascending`, K = 2 `one_per_half` with `sticky_nearest` and with `requester_aware`.
+- `requester_aware` cuts the extra delay of attachment addressing by about 80% on delta shells (Starlink 36.7 to 8.2 ms mean) with fewer flow updates than K = 1. The K = 2 variants run without exceptions, so their delivery under failures is the plain rule's.
+
+## `terminal_population/`
+
+Ground-terminal population at the addressing level, no routing.
+
+- `population_points.csv.gz`: North American census population points built by LEOPath's `scripts/fetch_population_points.py` from the US Census Bureau (2024 county estimates at 2024 Gazetteer points), INEGI (Censo 2020 localities) and Statistics Canada (2021 dissemination blocks at dissemination-area points). Totals match each census exactly; `SOURCES.txt` records each file's URL and SHA-256.
+- `terminals_<shell>.csv`: `scripts/terminal_population.py` for five shells, 1k to 1M terminals, census-weighted and uniform, `nearest` and `stay_while_visible`, static and 250 km/h. Columns: busiest-satellite load, endpoint bits x needs, address changes per terminal-minute, directory updates per second. Run on `6genablers-dlt-1` with image `leopath:dir-dev`.
