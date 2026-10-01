@@ -1,0 +1,8 @@
+Kuiper-synthetic  (34x34, delta), 6 snapshots, extra over the any-satellite optimum
+ nearest attachment at both ends, split by pass direction of the two attached satellites:
+  same direction         pairs   1624  extra delay mean  16.58 ms  p95  44.38 ms  max  55.40 ms
+  opposite directions    pairs   1688  extra delay mean  37.93 ms  p95  79.93 ms  max  96.29 ms
+  share of pairs with opposite directions: 51.0%
+ policy comparison, both ends:
+  nearest                pairs   3312  extra delay mean  27.46 ms  p95  73.63 ms  max  96.29 ms
+  nearest ascending      pairs   3312  extra delay mean  16.97 ms  p95  41.75 ms  max  55.00 ms

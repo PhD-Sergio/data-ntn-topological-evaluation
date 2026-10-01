@@ -1,0 +1,8 @@
+Telesat-synthetic  (27x13, delta), 6 snapshots, extra over the any-satellite optimum
+ nearest attachment at both ends, split by pass direction of the two attached satellites:
+  same direction         pairs   1630  extra delay mean  22.06 ms  p95  50.98 ms  max  65.55 ms
+  opposite directions    pairs   1682  extra delay mean  59.22 ms  p95 121.21 ms  max 145.64 ms
+  share of pairs with opposite directions: 50.8%
+ policy comparison, both ends:
+  nearest                pairs   3312  extra delay mean  40.93 ms  p95 115.41 ms  max 145.64 ms
+  nearest ascending      pairs   3312  extra delay mean  22.22 ms  p95  52.24 ms  max  65.03 ms

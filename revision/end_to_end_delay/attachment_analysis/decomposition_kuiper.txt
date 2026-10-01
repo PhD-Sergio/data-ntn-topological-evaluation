@@ -1,0 +1,15 @@
+== Kuiper-synthetic (34x34, delta)
+  policy nearest  : extra mean  27.5 ms
+     match     pairs  24.1%   extra mean    6.8 ms  p95   20.2   share of total cost   5.9%
+     src_only  pairs  26.1%   extra mean   37.3 ms  p95   78.9   share of total cost  35.4%
+     dst_only  pairs  26.1%   extra mean   37.3 ms  p95   78.9   share of total cost  35.4%
+     both      pairs  23.8%   extra mean   26.8 ms  p95   50.0   share of total cost  23.2%
+     cost of each end alone (other end free): source   9.2 ms, destination   9.2 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.72 (max 4), slots apart mean 0.86 (max 3); identical 14%
+  policy ascending: extra mean  17.0 ms
+     match     pairs  33.6%   extra mean    8.1 ms  p95   21.7   share of total cost  16.0%
+     src_only  pairs  15.7%   extra mean   14.5 ms  p95   30.0   share of total cost  13.4%
+     dst_only  pairs  15.7%   extra mean   14.5 ms  p95   30.0   share of total cost  13.4%
+     both      pairs  35.0%   extra mean   27.8 ms  p95   48.8   share of total cost  57.2%
+     cost of each end alone (other end free): source   9.3 ms, destination   9.3 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.93 (max 5), slots apart mean 0.83 (max 4); identical 12%

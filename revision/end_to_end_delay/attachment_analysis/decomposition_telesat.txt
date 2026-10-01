@@ -1,0 +1,15 @@
+== Telesat-synthetic (27x13, delta)
+  policy nearest  : extra mean  40.9 ms
+     match     pairs  24.1%   extra mean   12.5 ms  p95   27.6   share of total cost   7.4%
+     src_only  pairs  25.5%   extra mean   65.3 ms  p95  121.2   share of total cost  40.6%
+     dst_only  pairs  25.5%   extra mean   65.3 ms  p95  121.2   share of total cost  40.6%
+     both      pairs  25.0%   extra mean   18.8 ms  p95   35.7   share of total cost  11.5%
+     cost of each end alone (other end free): source   8.9 ms, destination   8.9 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.84 (max 3), slots apart mean 0.33 (max 1); identical 31%
+  policy ascending: extra mean  22.2 ms
+     match     pairs  35.5%   extra mean   13.3 ms  p95   28.7   share of total cost  21.3%
+     src_only  pairs  14.3%   extra mean   37.9 ms  p95   59.0   share of total cost  24.4%
+     dst_only  pairs  14.3%   extra mean   37.9 ms  p95   59.0   share of total cost  24.4%
+     both      pairs  35.9%   extra mean   18.6 ms  p95   35.7   share of total cost  30.0%
+     cost of each end alone (other end free): source   9.2 ms, destination   9.2 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.84 (max 3), slots apart mean 0.30 (max 1); identical 32%

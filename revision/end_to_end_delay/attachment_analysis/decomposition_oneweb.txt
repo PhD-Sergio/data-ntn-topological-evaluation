@@ -1,0 +1,14 @@
+== OneWeb-synthetic (12x49, star)
+  policy nearest  : extra mean  13.7 ms
+     match     pairs  85.5%   extra mean   10.0 ms  p95   15.6   share of total cost  62.1%
+     src_only  pairs   7.2%   extra mean   35.9 ms  p95   70.9   share of total cost  18.9%
+     dst_only  pairs   7.2%   extra mean   35.9 ms  p95   70.9   share of total cost  18.9%
+     cost of each end alone (other end free): source   6.4 ms, destination   6.4 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.73 (max 3), slots apart mean 1.80 (max 3); identical 2%
+  policy ascending: extra mean  12.4 ms
+     match     pairs  87.1%   extra mean    9.9 ms  p95   15.5   share of total cost  69.3%
+     src_only  pairs   6.3%   extra mean   30.1 ms  p95   65.0   share of total cost  15.3%
+     dst_only  pairs   6.3%   extra mean   30.1 ms  p95   65.0   share of total cost  15.3%
+     both      pairs   0.2%   extra mean    6.5 ms  p95   11.6   share of total cost   0.1%
+     cost of each end alone (other end free): source   5.9 ms, destination   5.9 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.72 (max 3), slots apart mean 1.76 (max 3); identical 3%

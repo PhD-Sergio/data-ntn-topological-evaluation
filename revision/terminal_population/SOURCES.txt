@@ -1,0 +1,4 @@
+usa_population	https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/counties/totals/co-est2024-alldata.csv	sha256:abcc8720d669e793bbfdcd440eeec37a78db3b452adbe4ccd1eadf7c72b522b9
+usa_gazetteer	https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_counties_national.zip	sha256:3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0
+mexico_iter	https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip	sha256:9342fdbd45bda5897f2b827a12904843b6f8fb85d4e72da299e09e4d2422ab60
+canada_gaf	https://www12.statcan.gc.ca/census-recensement/2021/geo/aip-pia/attribute-attribs/files-fichiers/2021_92-151_X.zip	sha256:918aa8502d9d95b1ae5ce437ed9674e0977ec55977c08b8d01822a9dab6fe5da

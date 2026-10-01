@@ -1,0 +1,15 @@
+== Starlink-550 (72x22, delta)
+  policy nearest  : extra mean  57.7 ms
+     match     pairs  22.8%   extra mean   13.4 ms  p95   32.5   share of total cost   5.3%
+     src_only  pairs  26.5%   extra mean   76.5 ms  p95  139.9   share of total cost  35.1%
+     dst_only  pairs  26.5%   extra mean   76.5 ms  p95  139.9   share of total cost  35.1%
+     both      pairs  24.3%   extra mean   58.2 ms  p95  105.3   share of total cost  24.5%
+     cost of each end alone (other end free): source  20.7 ms, destination  20.7 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 2.14 (max 9), slots apart mean 0.40 (max 1); identical 8%
+  policy ascending: extra mean  42.2 ms
+     match     pairs  28.4%   extra mean   13.7 ms  p95   36.9   share of total cost   9.2%
+     src_only  pairs  20.4%   extra mean   53.6 ms  p95   85.5   share of total cost  25.9%
+     dst_only  pairs  20.4%   extra mean   53.6 ms  p95   85.5   share of total cost  25.9%
+     both      pairs  30.7%   extra mean   53.5 ms  p95  103.7   share of total cost  38.9%
+     cost of each end alone (other end free): source  20.5 ms, destination  20.5 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 2.14 (max 10), slots apart mean 0.40 (max 2); identical 10%
