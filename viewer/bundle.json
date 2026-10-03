@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "kind": "leopath-viewer",
+  "scope": "Synthetic single-shell models and controlled Python failure demonstrations. Evaluation CSVs remain separate; these are not recorded walks from the paper campaigns.",
+  "simulator": {
+    "repository": "Fundacio-i2CAT/LEOPath",
+    "commit": "35f779bae9b469420ab8a70fde5fcab44ad82979",
+    "exporterSha256": "1922a54855f37faf1508155f0c71e24f2445dcd4e5d0122c806246dad080ab39",
+    "replayExporterSha256": "8c57a0ba41e8b686e7ac55eef0b7a8a099a7ce665d3940d5d89255999f41b485",
+    "forwardingSha256": "be584e07514076308ceb2ca7c9d67902fda96710ea9d58ab4cb856ea11009188"
+  },
+  "evaluationInputs": {
+    "repository": "PhD-Sergio/data-ntn-topological-evaluation",
+    "baseCommit": "638f32c677c3fbb258601481dea4b7e3829ec1ee",
+    "files": {
+      "telesat/topological_routing/grid/metadata.json": "bbb74c64d759340a6fef0fed80e15e75e075d69bffb10d147e7525663377d92d",
+      "starlink/topological_routing/grid/metadata.json": "63f6d6c2da7a653bca1dcbc4636ae077492407322395a811293aa726de9523a4",
+      "kuiper/topological_routing/grid/metadata.json": "56a8b78dd0f051f8a4c9f89247d24f9b2ad1240c5f05d3af705363bece8e758c",
+      "oneweb/topological_routing/grid/metadata.json": "769e6dc3cdffab5772b111cf1278beb6045fe7c86c950c5fc498fe21ee6c3636"
+    }
+  },
+  "files": {
+    "constellations.json": "ca3d34531adee6d78c555e4039ff211268d8cc579bb4cd4436e338fbf9bd7bc6",
+    "data/tles_kuiper_synth.txt": "50245f50f1c7e5f37010aac1adb80d09c7a2489ad812d428069007466d422d5f",
+    "data/tles_oneweb_synth.txt": "4d3f75dad6193a4ba5c74f2740365977fab75b600b85f770f53f3b23eb6a0b43",
+    "data/tles_starlink_550_sgp.txt": "a81be3641efb5487269cdac265e3c8e4dfd2666443c9f665d9ef5662f37c5737",
+    "data/tles_telesat_synth.txt": "873801ea56369c4f51384f8d3dbb7e917ded123e3f1dac9f4102bebee4f1e047",
+    "inputs/kuiper-metadata.json": "56a8b78dd0f051f8a4c9f89247d24f9b2ad1240c5f05d3af705363bece8e758c",
+    "inputs/oneweb-metadata.json": "769e6dc3cdffab5772b111cf1278beb6045fe7c86c950c5fc498fe21ee6c3636",
+    "inputs/starlink-metadata.json": "63f6d6c2da7a653bca1dcbc4636ae077492407322395a811293aa726de9523a4",
+    "inputs/telesat-metadata.json": "bbb74c64d759340a6fef0fed80e15e75e075d69bffb10d147e7525663377d92d",
+    "replays/kuiper-brick_a.json": "11a10fe9ffcc261d82c2abcc87ef18193577a4ca0e58f5a25b5e460ffbc0da3d",
+    "replays/kuiper-brick_a.tles.txt": "50245f50f1c7e5f37010aac1adb80d09c7a2489ad812d428069007466d422d5f",
+    "replays/kuiper-grid.json": "b216ed4c4e09c3dae8a991228531a7f21739b439da3c4a6e5065bf466addd290",
+    "replays/kuiper-grid.tles.txt": "50245f50f1c7e5f37010aac1adb80d09c7a2489ad812d428069007466d422d5f",
+    "replays/manifest.json": "024fe155c47fb8e0755bda8cdb7f69e27e00af1d705fc7bc935d96f7dfd16319",
+    "replays/oneweb-grid.json": "765fa30b6d30744b934c2cb3513285d0d2060f1ab9f837a662f3185ba89b1842",
+    "replays/oneweb-grid.tles.txt": "4d3f75dad6193a4ba5c74f2740365977fab75b600b85f770f53f3b23eb6a0b43",
+    "replays/starlink-grid.json": "b60be4e043dd4bab1a64cbe642515aa089608399a3437b19a7e701a51e6e6236",
+    "replays/starlink-grid.tles.txt": "a81be3641efb5487269cdac265e3c8e4dfd2666443c9f665d9ef5662f37c5737",
+    "replays/telesat-grid.json": "9c9cf13c40b678314ce52e9aefa7b5cce579be77981d70147a8833288bac2363",
+    "replays/telesat-grid.tles.txt": "873801ea56369c4f51384f8d3dbb7e917ded123e3f1dac9f4102bebee4f1e047",
+    "replays/telesat-grid_seam.json": "06ad84ddd8c0312a019395ea670ce0b1f178b979a2b8e300554b1c60e6b2e1bd",
+    "replays/telesat-grid_seam.tles.txt": "873801ea56369c4f51384f8d3dbb7e917ded123e3f1dac9f4102bebee4f1e047",
+    "replays/telesat-ring.json": "83a13e8a760640d9d6269c75e05516bc4c92b5ef98bc4d481cf48195f6f66590",
+    "replays/telesat-ring.tles.txt": "873801ea56369c4f51384f8d3dbb7e917ded123e3f1dac9f4102bebee4f1e047"
+  }
+}

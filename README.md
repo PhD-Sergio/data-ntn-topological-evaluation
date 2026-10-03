@@ -77,6 +77,13 @@ Each evaluation run produces:
 | Stretch | Ratio of delivered path length to shortest path length in the same snapshot |
 | Compute Time | Wall-clock time to process each snapshot |
 
+## Static viewer bundle
+
+`viewer/` contains the versioned JSON/TLE data for the LEOPath static website.
+Stable dataset releases validate and publish this bundle, then trigger the
+LEOPath GitHub Pages build. See [viewer/README.md](viewer/README.md) for
+regeneration, provenance and the one-time dispatch credential setup.
+
 ## Citation
 
 If you use this data in your research, please cite:
