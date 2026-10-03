@@ -1,0 +1,20 @@
+name: Validate viewer dataset
+on:
+  pull_request:
+    paths: ['viewer/**', 'scripts/*viewer*.py', '.github/workflows/viewer-*.yml', '*/topological_routing/grid/metadata.json']
+  push:
+    branches: [main]
+    paths: ['viewer/**', 'scripts/*viewer*.py', '.github/workflows/viewer-*.yml', '*/topological_routing/grid/metadata.json']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/viewer_dataset.py validate viewer --dataset-root .
+      - run: python scripts/verify_viewer_replays.py viewer/replays

@@ -1,0 +1,54 @@
+name: Publish viewer dataset
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      dataset_tag:
+        description: 'Existing stable release tag to publish/retry'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: viewer-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' || !github.event.release.prerelease
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.dataset_tag }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate bundle and forwarding results
+        run: |
+          python scripts/viewer_dataset.py validate viewer --dataset-root .
+          python scripts/verify_viewer_replays.py viewer/replays
+      - name: Package the exact release commit
+        env:
+          DATASET_TAG: ${{ github.event.release.tag_name || inputs.dataset_tag }}
+        run: python scripts/viewer_dataset.py pack viewer --tag "$DATASET_TAG" --output "$RUNNER_TEMP/viewer-release"
+      - name: Publish immutable viewer assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATASET_TAG: ${{ github.event.release.tag_name || inputs.dataset_tag }}
+        run: python scripts/publish_viewer_release.py --tag "$DATASET_TAG" --assets "$RUNNER_TEMP/viewer-release"
+      - name: Trigger the LEOPath Pages build
+        env:
+          GH_TOKEN: ${{ secrets.LEOPATH_PAGES_DISPATCH_TOKEN }}
+          DATASET_TAG: ${{ github.event.release.tag_name || inputs.dataset_tag }}
+        run: |
+          if [[ -z "$GH_TOKEN" ]]; then
+            echo 'Set LEOPATH_PAGES_DISPATCH_TOKEN with Contents: write on Fundacio-i2CAT/LEOPath to enable automatic deployment.' >&2
+            exit 1
+          fi
+          python scripts/publish_viewer_release.py --tag "$DATASET_TAG" --dispatch-only
