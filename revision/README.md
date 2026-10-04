@@ -242,3 +242,12 @@ scheme with derived geometry, guard and grow exceptions; failure-free, seed 1, s
 at one-minute steps. LEOPath `ad92b9b` (variants `topological_k{K}_req` in
 `scripts/run-failure-sweep.sh`), image `leopath:final-1p`. Ring on `sna-12:~/sergio-ksweep-ring`,
 +Grid on `dlt-1:~/ksweep-grid`; summaries by `summarize_failure_sweep`.
+
+## `delay_perturbation/`
+
+Link delays the estimator does not know (item H, R1.7). Every ISL gets a fixed extra delay
+of `1 + s·U(0,1)` times its geometric delay, seeded per link, for s = 0.1 and 0.3; routing,
+link-state and the metrics see it, the derived estimator does not. Starlink and Kuiper, no
+failures and 5% ISL loss, seeds 1-5, link-state and the scheme under both attachment
+policies, 168 runs on `sna-12:~/sergio-pert-{0.1,0.3}`, image `leopath:pert-dev`
+(LEOPath tag `image-pert-dev`). Summaries by `summarize_failure_sweep`.
