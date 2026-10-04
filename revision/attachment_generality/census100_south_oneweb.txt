@@ -1,0 +1,28 @@
+== OneWeb-synthetic (12x49, star), stations /gsets/census100_south.yaml
+SUMMARY,oneweb,/gsets/census100_south.yaml,nearest,12.76,88.1,11.9,0.0,59400
+SUMMARY,oneweb,/gsets/census100_south.yaml,ascending,6.50,98.8,0.0,1.2,59400
+SUMMARY,oneweb,/gsets/census100_south.yaml,descending,29.81,44.5,41.0,14.5,59400
+SUMMARY,oneweb,/gsets/census100_south.yaml,per_pair_half,6.43,96.5,0.0,3.5,59400
+  policy nearest  : extra mean  12.8 ms
+     match     pairs  88.1%   extra mean    6.5 ms  p95   14.1   share of total cost  44.9%
+     src_only  pairs   5.9%   extra mean   59.3 ms  p95   71.9   share of total cost  27.6%
+     dst_only  pairs   5.9%   extra mean   59.3 ms  p95   71.9   share of total cost  27.6%
+     cost of each end alone (other end free): source   3.8 ms, destination   3.8 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.41 (max 2), slots apart mean 0.71 (max 3); identical 29%
+  policy ascending: extra mean   6.5 ms
+     match     pairs  98.8%   extra mean    6.5 ms  p95   14.0   share of total cost  99.0%
+     both      pairs   1.2%   extra mean    5.3 ms  p95    8.6   share of total cost   1.0%
+     cost of each end alone (other end free): source   1.9 ms, destination   1.9 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.43 (max 2), slots apart mean 0.72 (max 3); identical 28%
+  policy descending: extra mean  29.8 ms
+     match     pairs  44.5%   extra mean    5.1 ms  p95   11.6   share of total cost   7.6%
+     src_only  pairs  20.5%   extra mean   64.1 ms  p95   75.7   share of total cost  44.1%
+     dst_only  pairs  20.5%   extra mean   64.1 ms  p95   75.7   share of total cost  44.1%
+     both      pairs  14.5%   extra mean    8.6 ms  p95   14.1   share of total cost   4.2%
+     cost of each end alone (other end free): source  14.2 ms, destination  14.2 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.30 (max 2), slots apart mean 0.60 (max 3); identical 37%
+  policy per_pair_half: extra mean   6.4 ms
+     match     pairs  96.5%   extra mean    6.4 ms  p95   14.0   share of total cost  96.6%
+     both      pairs   3.5%   extra mean    6.2 ms  p95   11.8   share of total cost   3.4%
+     cost of each end alone (other end free): source   2.0 ms, destination   2.0 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.43 (max 2), slots apart mean 0.71 (max 3); identical 28%

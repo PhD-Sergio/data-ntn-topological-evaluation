@@ -1,0 +1,27 @@
+== Telesat-synthetic (27x13, delta), stations /gsets/census100_south.yaml
+SUMMARY,telesat,/gsets/census100_south.yaml,nearest,61.09,31.6,49.6,18.8,59400
+SUMMARY,telesat,/gsets/census100_south.yaml,ascending,9.69,51.2,0.0,48.8,59400
+SUMMARY,telesat,/gsets/census100_south.yaml,descending,10.88,48.8,0.0,51.2,59400
+SUMMARY,telesat,/gsets/census100_south.yaml,per_pair_half,6.38,65.3,0.0,34.7,59400
+  policy nearest  : extra mean  61.1 ms
+     match     pairs  31.6%   extra mean    7.5 ms  p95   21.4   share of total cost   3.9%
+     src_only  pairs  24.8%   extra mean  113.7 ms  p95  131.9   share of total cost  46.2%
+     dst_only  pairs  24.8%   extra mean  113.7 ms  p95  131.9   share of total cost  46.2%
+     both      pairs  18.8%   extra mean   12.1 ms  p95   21.2   share of total cost   3.7%
+     cost of each end alone (other end free): source   4.1 ms, destination   4.1 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.40 (max 2), slots apart mean 0.17 (max 1); identical 63%
+  policy ascending: extra mean   9.7 ms
+     match     pairs  51.2%   extra mean    8.4 ms  p95   22.3   share of total cost  44.3%
+     both      pairs  48.8%   extra mean   11.1 ms  p95   20.9   share of total cost  55.7%
+     cost of each end alone (other end free): source   4.2 ms, destination   4.2 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.50 (max 3), slots apart mean 0.19 (max 1); identical 55%
+  policy descending: extra mean  10.9 ms
+     match     pairs  48.8%   extra mean    9.7 ms  p95   23.8   share of total cost  43.3%
+     both      pairs  51.2%   extra mean   12.0 ms  p95   23.0   share of total cost  56.7%
+     cost of each end alone (other end free): source   4.7 ms, destination   4.7 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.54 (max 2), slots apart mean 0.18 (max 1); identical 55%
+  policy per_pair_half: extra mean   6.4 ms
+     match     pairs  65.3%   extra mean    4.5 ms  p95   17.1   share of total cost  45.6%
+     both      pairs  34.7%   extra mean   10.0 ms  p95   18.1   share of total cost  54.4%
+     cost of each end alone (other end free): source   3.1 ms, destination   3.1 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 0.34 (max 3), slots apart mean 0.08 (max 1); identical 70%

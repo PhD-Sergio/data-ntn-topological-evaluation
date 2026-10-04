@@ -1,0 +1,6 @@
+== Kuiper-synthetic (34x34), 24 stations, 60 min at 1 s
+renumbering events: 1490 (62.1 per station per hour)
+forced by the old satellite setting (slack 0): 0 (0.0%)
+slack after the switch: min 81 s, p5 100 s, median 110 s
+flow checks (event x peer): 34270; slack < needed: 0 (0.00%)
+SUMMARY,kuiper,1490,62.08,0,81,100,110,34270,0,0

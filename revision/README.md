@@ -251,3 +251,54 @@ link-state and the metrics see it, the derived estimator does not. Starlink and 
 failures and 5% ISL loss, seeds 1-5, link-state and the scheme under both attachment
 policies, 168 runs on `sna-12:~/sergio-pert-{0.1,0.3}`, image `leopath:pert-dev`
 (LEOPath tag `image-pert-dev`). Summaries by `summarize_failure_sweep`.
+
+## `exception_entries_final/`
+
+Failure-injection simulations behind Section 4.6, Figure 15 and Table 6 (item Z4): exception
+entries computed for every destination address from flooded failures (grow rule) and
+aggregated into address regions. Four constellations × 16 failure conditions × seeds 1-5 ×
+the scheme under the northbound and smart-directory policies, 512 runs, one hour at one-minute
+steps on +Grid, image `leopath:final-entries` (`dlt-1:~/leopath-entries-robustness`).
+`failure_sweep_seeds.csv` has per-seed values, including `exception_region_max_per_satellite`.
+
+## `realistic_directory_runs/`
+
+`z_final/`: summaries of the final failure-free matrices (`matrix-{grid,ring,grid_seam}`) and
+robustness sweep (item Z, image `leopath:final-dev`). The other folders: the smart-directory
+rerun in which the destination resolves without the caller's ground-link lengths (item Z3,
+image `leopath:final-real`, `dlt-1:~/leopath-real-*`). Table 5 reads its delay and stretch
+columns from these summaries.
+
+## `renumbering_loss/`
+
+Timing bound on packet loss at address changes (Section 5.1): LEOPath
+`scripts/renumbering_loss.py`, 24 stations, one hour at one-second resolution, +Grid path
+delays. `summary.csv` per shell: address changes, how long the old satellite stays in range
+after a change, and the event × peer checks that would lose packets.
+
+## `convergence/`
+
+`flood_time.csv`: time for a flooded failure report to reach the last satellite (mean
+eccentricity and diameter, in ms and hops), on the four evaluated shells and the twelve filed
+shells, +Grid and open seam; LEOPath `scripts/flood_time.py`.
+
+## `attachment_generality/`
+
+Addressing-only check that the ordering of the attachment policies holds for other station
+sets (Section 4.5): six sets of 24 to 100 stations (major cities, census-weighted, shifted in
+longitude, mirrored south, tropics, uniform) and a 24-hour horizon, policies `nearest`,
+`ascending`, `descending` and `per_pair_half` (the smart directory). `realistic_directory/`
+checks that resolving without the caller's ground-link lengths changes the mean extra delay
+by at most 0.03 ms.
+
+## `exception_scaling/`
+
+Exception entries per failed link on synthetic shells of 144 to 5 184 satellites (LEOPath
+`scripts/exception_entry_scaling.py`): the number stays at three to four as the shell grows.
+
+## `exception_churn/`, `exception_grow_work_raw/`, `exception_one_pass/`
+
+Supporting runs for the exception rule: entries added and removed between snapshots
+(`exception_churn/`, image `leopath:final-churn`), the forwarding decisions each satellite
+spends computing entries after a failure (`exception_grow_work_raw/`), and the one-pass rule
+compared with the grow rule the paper uses (`exception_one_pass/`, image `leopath:final-1p`).

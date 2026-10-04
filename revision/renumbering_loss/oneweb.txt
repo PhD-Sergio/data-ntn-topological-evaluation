@@ -1,0 +1,7 @@
+== OneWeb-synthetic (12x49), 24 stations, 60 min at 1 s
+renumbering events: 818 (34.1 per station per hour)
+forced by the old satellite setting (slack 0): 1 (0.1%)
+slack after the switch: min 0 s, p5 188 s, median 319 s
+flow checks (event x peer): 18814; slack < needed: 23 (0.12%)
+loss window when it happens: mean 162 ms, max 217 ms
+SUMMARY,oneweb,818,34.08,1,0,188,319,18814,23,162

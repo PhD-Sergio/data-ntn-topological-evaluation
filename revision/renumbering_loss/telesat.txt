@@ -1,0 +1,6 @@
+== Telesat-synthetic (27x13), 24 stations, 60 min at 1 s
+renumbering events: 755 (31.5 per station per hour)
+forced by the old satellite setting (slack 0): 0 (0.0%)
+slack after the switch: min 70 s, p5 117 s, median 171 s
+flow checks (event x peer): 17365; slack < needed: 0 (0.00%)
+SUMMARY,telesat,755,31.46,0,70,117,171,17365,0,0

@@ -1,0 +1,33 @@
+== Starlink-550 (72x22, delta), stations /gsets/dense24.yaml
+SUMMARY,starlink,/gsets/dense24.yaml,nearest,57.73,22.8,53.0,24.3,3312
+SUMMARY,starlink,/gsets/dense24.yaml,ascending,42.22,28.4,40.9,30.7,3312
+SUMMARY,starlink,/gsets/dense24.yaml,descending,42.00,30.7,40.9,28.4,3312
+SUMMARY,starlink,/gsets/dense24.yaml,per_pair_half,12.75,90.5,4.2,5.3,3312
+  policy nearest  : extra mean  57.7 ms
+     match     pairs  22.8%   extra mean   13.4 ms  p95   32.5   share of total cost   5.3%
+     src_only  pairs  26.5%   extra mean   76.5 ms  p95  139.9   share of total cost  35.1%
+     dst_only  pairs  26.5%   extra mean   76.5 ms  p95  139.9   share of total cost  35.1%
+     both      pairs  24.3%   extra mean   58.2 ms  p95  105.3   share of total cost  24.5%
+     cost of each end alone (other end free): source  20.7 ms, destination  20.7 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 2.14 (max 9), slots apart mean 0.40 (max 1); identical 8%
+  policy ascending: extra mean  42.2 ms
+     match     pairs  28.4%   extra mean   13.7 ms  p95   36.9   share of total cost   9.2%
+     src_only  pairs  20.4%   extra mean   53.6 ms  p95   85.5   share of total cost  25.9%
+     dst_only  pairs  20.4%   extra mean   53.6 ms  p95   85.5   share of total cost  25.9%
+     both      pairs  30.7%   extra mean   53.5 ms  p95  103.7   share of total cost  38.9%
+     cost of each end alone (other end free): source  20.5 ms, destination  20.5 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 2.14 (max 10), slots apart mean 0.40 (max 2); identical 10%
+  policy descending: extra mean  42.0 ms
+     match     pairs  30.7%   extra mean   14.2 ms  p95   34.1   share of total cost  10.4%
+     src_only  pairs  20.4%   extra mean   52.4 ms  p95   86.8   share of total cost  25.5%
+     dst_only  pairs  20.4%   extra mean   52.4 ms  p95   86.8   share of total cost  25.5%
+     both      pairs  28.4%   extra mean   57.2 ms  p95  111.2   share of total cost  38.7%
+     cost of each end alone (other end free): source  20.5 ms, destination  20.5 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 2.14 (max 10), slots apart mean 0.41 (max 2); identical 12%
+  policy per_pair_half: extra mean  12.7 ms
+     match     pairs  90.5%   extra mean   12.3 ms  p95   28.8   share of total cost  87.1%
+     src_only  pairs   2.1%   extra mean   18.2 ms  p95   29.1   share of total cost   3.0%
+     dst_only  pairs   2.1%   extra mean   18.2 ms  p95   29.1   share of total cost   3.0%
+     both      pairs   5.3%   extra mean   16.6 ms  p95   37.9   share of total cost   6.8%
+     cost of each end alone (other end free): source   5.9 ms, destination   5.8 ms
+     in 'match' pairs, chosen vs best satellite at one end: planes apart mean 2.02 (max 10), slots apart mean 0.40 (max 2); identical 10%

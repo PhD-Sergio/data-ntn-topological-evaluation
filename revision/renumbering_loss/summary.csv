@@ -1,0 +1,5 @@
+config,events,events_per_station_hour,forced_by_setting,slack_min_s,slack_p5_s,slack_median_s,flow_checks,flow_checks_slack_below_needed,loss_window_mean_ms
+telesat,755,31.46,0,70,117,171,17365,0,0
+starlink,2102,87.58,0,73,95,122,48346,0,0
+kuiper,1490,62.08,0,81,100,110,34270,0,0
+oneweb,818,34.08,1,0,188,319,18814,23,162
