@@ -193,3 +193,41 @@ Ground-terminal population at the addressing level, no routing.
 
 - `population_points.csv.gz`: North American census population points built by LEOPath's `scripts/fetch_population_points.py` from the US Census Bureau (2024 county estimates at 2024 Gazetteer points), INEGI (Censo 2020 localities) and Statistics Canada (2021 dissemination blocks at dissemination-area points). Totals match each census exactly; `SOURCES.txt` records each file's URL and SHA-256.
 - `terminals_<shell>.csv`: `scripts/terminal_population.py` for five shells, 1k to 1M terminals, census-weighted and uniform, `nearest` and `stay_while_visible`, static and 250 km/h. Columns: busiest-satellite load, endpoint bits x needs, address changes per terminal-minute, directory updates per second. Run on `6genablers-dlt-1` with image `leopath:dir-dev`.
+
+## `final_matrix/` and `brick_wall_matrix/`
+
+Table 4 and Figure 11 of the revised manuscript, regenerated from the failure-free,
+seed-1 runs of the final model with `scripts/matrix_from_sweep.py`, which links runs
+written in the failure-sweep layout into the layout of LEOPath's
+`state_accounting_tables` and runs it.
+
+- `final_matrix/`: 120 runs, four constellations × ring, grid and grid_seam × ten
+  variants, six hours at one-minute steps. Sources: Z (`dlt-1:~/leopath-final-matrix-*`:
+  `link_state`, `link_state_dir_asc`, `explicit_r1`, `explicit_r3`,
+  `topological_derived`, `topological_scheme_asc`), Z2 (`sna-13:~/sergio-dra-matrix-*`:
+  `dra_scheme_asc`) and Z3, the realistic smart-directory rerun
+  (`dlt-1:~/leopath-real-matrix-*`: `link_state_dir_half_req`, `dra_scheme_req`,
+  `topological_scheme_req`).
+- `brick_wall_matrix/`: 15 runs, three ISLs per satellite in layouts `brick_a`
+  (Starlink, Kuiper, OneWeb) and `brick_b` (Starlink, Kuiper), one hour at one-minute
+  steps, `link_state_dir_asc`, `topological_scheme_asc` and `topological_scheme_asc_1p`
+  (`sna-12:~/sergio-brick-1p-brick_{a,b}`, `sna-13:~/sergio-brick-1p-brick_a`, image
+  `leopath:final-1p`).
+
+```
+python scripts/matrix_from_sweep.py --leopath ~/phd/LEOPath \
+    --sweep Z=final-matrix --sweep Z2=dra-matrix --sweep Z3=real-matrix \
+    --pick Z:link_state,link_state_dir_asc,explicit_r1,explicit_r3,topological_derived,topological_scheme_asc \
+    --pick Z2:dra_scheme_asc \
+    --pick Z3:link_state_dir_half_req,dra_scheme_req,topological_scheme_req \
+    --output revision/final_matrix
+python scripts/matrix_from_sweep.py --leopath ~/phd/LEOPath --sweep B=brick --isl brick_a brick_b \
+    --pick B:link_state_dir_asc,topological_scheme_asc,topological_scheme_asc_1p \
+    --output revision/brick_wall_matrix
+python plot_story_figures.py --final-matrix revision/final_matrix/matrix_runs.csv \
+    --brick-matrix revision/brick_wall_matrix/matrix_runs.csv   # in ntn-paper-overleaf
+```
+
+Forwarding stretch, shared stretch and extra delay in Table 4 come from the sweep
+summaries in `realistic_directory_runs/` (`z_final/` and the Z3 rerun) and, for the brick
+wall, from `summarize_failure_sweep` over the same runs.
