@@ -231,3 +231,14 @@ python plot_story_figures.py --final-matrix revision/final_matrix/matrix_runs.cs
 Forwarding stretch, shared stretch and extra delay in Table 4 come from the sweep
 summaries in `realistic_directory_runs/` (`z_final/` and the Z3 rerun) and, for the brick
 wall, from `summarize_failure_sweep` over the same runs.
+
+## `attachment_count/`
+
+How the number of attachments per station changes reachability on Ring and the cost of
+attachment addressing on +Grid. Four constellations × K = 1, 2, 3, 4, 6, 8 nearest
+attachments (`gs_attachment_order: nearest`, `gs_address_policy: requester_aware`, so the
+destination answers each flow request with an address the requester can reach), full
+scheme with derived geometry, guard and grow exceptions; failure-free, seed 1, six hours
+at one-minute steps. LEOPath `ad92b9b` (variants `topological_k{K}_req` in
+`scripts/run-failure-sweep.sh`), image `leopath:final-1p`. Ring on `sna-12:~/sergio-ksweep-ring`,
++Grid on `dlt-1:~/ksweep-grid`; summaries by `summarize_failure_sweep`.
