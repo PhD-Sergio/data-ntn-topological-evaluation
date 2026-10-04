@@ -302,3 +302,21 @@ Supporting runs for the exception rule: entries added and removed between snapsh
 (`exception_churn/`, image `leopath:final-churn`), the forwarding decisions each satellite
 spends computing entries after a failure (`exception_grow_work_raw/`), and the one-pass rule
 compared with the grow rule the paper uses (`exception_one_pass/`, image `leopath:final-1p`).
+
+## Regenerating the figures
+
+`scripts/plot_story_figures.py` draws the figures of the revised manuscript from this
+dataset alone (the paper's copies are byte-identical):
+
+```
+python scripts/plot_story_figures.py --summaries revision/figure_inputs \
+    --final-matrix revision/final_matrix/matrix_runs.csv \
+    --brick-matrix revision/brick_wall_matrix/matrix_runs.csv \
+    --failure-sweep revision/exception_entries_final --output-dir figures
+```
+
+Figure 11 is `evaluation_resource_footprint.png`, Figure 12 `explicit_path_sensitivity.png`
+and Figure 15 `failure_exception_state.png`. `revision/figure_inputs/` holds the two
+summaries the explicit-path figure reads: `headline/` (identical to
+`revision/state_accounting/matrix_runs.csv`) and `explicit_strict_r3/` (strict R = 3 runs,
+`sna-12:~/sergio-explicit-strict`, image `leopath:dra-dev`).
