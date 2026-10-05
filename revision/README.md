@@ -325,6 +325,34 @@ minute on +Grid (3.4 to 4.1% of the table), 12.0 to 61.8 on the seam, and 718 to
 per satellite and hour whatever the sampling interval. Each run also has a per-snapshot
 CSV and a JSON summary.
 
+## `exception_refresh/`
+
+When exception entries are recomputed (Section 4.6 and the limitations of the revised
+manuscript). Every other result recomputes the exception table at every snapshot. Variant
+`topological_scheme_asc_event` (LEOPath 0.2.1, `--exception-refresh event`) recomputes it
+only when the set of failed satellites and ISLs changes and otherwise keeps the table
+computed for that set while the shell moves, as a deployment reacting only to flooded
+failure reports would. Same configuration as `topological_scheme_asc` otherwise (attachment
+addressing, progress guard, `grow` exceptions). Four constellations, +Grid, 1 h at 1-min
+steps, five seeds. The fixed voids (`void_b2/4/8`), the cut and the polar conditions run
+both variants; the random conditions (`isl_p0.01`, `sat_p0.005`) run the event variant
+only, and their every-snapshot reference is `exception_entries_final/`.
+
+Results: around a fixed void the frozen table adds no entries (against 3 to 85 per snapshot
+when recomputed), but its entries go stale as the shell moves; 0.4 to 12.5 source-destination
+pairs per snapshot then loop and delivery falls to 97.7 to 99.9%, against 100% when
+recomputed. Under random failures, which change every snapshot, the event variant delivers
+99.97 to 100% at 1% ISL loss and 99.72 to 99.89% at 0.5% satellite loss (100% recomputed).
+Cut and polar conditions differ by at most 0.03 percentage points.
+
+Run on `6genablers-dlt-1` with image `leopath:event-dev`, built from the LEOPath tree of tag `v0.2.1`
+(which differs only by a typing-only rewrite of the cache lookup in `fstate_calculation.py`
+and by the version and changelog); `run_event_sweep.sh` is the launch
+script, `sweep.log` and `job_timings.csv` its log (184 runs, all exit 0). Summaries:
+
+    docker run --rm --entrypoint python -v ~/event-sweep:/in:ro -v $PWD/out:/out \
+      leopath:event-dev -m leopath.experiments.summarize_failure_sweep --input /in --output-dir /out
+
 ## Regenerating the figures
 
 `scripts/plot_story_figures.py` draws the figures of the revised manuscript from this

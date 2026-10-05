@@ -1,0 +1,376 @@
+=== Mon Oct  5 09:23:01 CEST 2026 failure sweep start: JOBS=38 image=leopath:event-dev out=/home/apino/event-sweep ===
+    grid, 1h at 1min steps, seeds: 1 2 3 4 5
+[09:23:01] start starlink/cut/seed1/topological_scheme_asc
+[09:23:01] start starlink/cut/seed1/topological_scheme_asc_event
+[09:23:01] start starlink/polar_lat75/seed1/topological_scheme_asc
+[09:23:01] start starlink/polar_lat75/seed1/topological_scheme_asc_event
+[09:23:01] start starlink/polar_lat60/seed1/topological_scheme_asc
+[09:23:01] start starlink/polar_lat60/seed1/topological_scheme_asc_event
+[09:23:01] start starlink/void_b2/seed1/topological_scheme_asc
+[09:23:01] start starlink/void_b2/seed1/topological_scheme_asc_event
+[09:23:01] start starlink/void_b2/seed2/topological_scheme_asc
+[09:23:01] start starlink/void_b2/seed2/topological_scheme_asc_event
+[09:23:01] start starlink/void_b2/seed3/topological_scheme_asc
+[09:23:01] start starlink/void_b2/seed3/topological_scheme_asc_event
+[09:23:01] start starlink/void_b2/seed4/topological_scheme_asc
+[09:23:01] start starlink/void_b2/seed4/topological_scheme_asc_event
+[09:23:01] start starlink/void_b2/seed5/topological_scheme_asc
+[09:23:01] start starlink/void_b2/seed5/topological_scheme_asc_event
+[09:23:01] start starlink/void_b4/seed1/topological_scheme_asc
+[09:23:01] start starlink/void_b4/seed1/topological_scheme_asc_event
+[09:23:01] start starlink/void_b4/seed2/topological_scheme_asc
+[09:23:01] start starlink/void_b4/seed2/topological_scheme_asc_event
+[09:23:01] start starlink/void_b4/seed3/topological_scheme_asc
+[09:23:01] start starlink/void_b4/seed3/topological_scheme_asc_event
+[09:23:01] start starlink/void_b4/seed4/topological_scheme_asc
+[09:23:01] start starlink/void_b4/seed4/topological_scheme_asc_event
+[09:23:01] start starlink/void_b4/seed5/topological_scheme_asc
+[09:23:01] start starlink/void_b4/seed5/topological_scheme_asc_event
+[09:23:01] start starlink/void_b8/seed1/topological_scheme_asc
+[09:23:01] start starlink/void_b8/seed1/topological_scheme_asc_event
+[09:23:01] start starlink/void_b8/seed2/topological_scheme_asc
+[09:23:01] start starlink/void_b8/seed2/topological_scheme_asc_event
+[09:23:01] start starlink/void_b8/seed3/topological_scheme_asc
+[09:23:01] start starlink/void_b8/seed3/topological_scheme_asc_event
+[09:23:01] start starlink/void_b8/seed4/topological_scheme_asc
+[09:23:01] start starlink/void_b8/seed4/topological_scheme_asc_event
+[09:23:01] start starlink/void_b8/seed5/topological_scheme_asc
+[09:23:01] start starlink/void_b8/seed5/topological_scheme_asc_event
+[09:23:01] start kuiper/cut/seed1/topological_scheme_asc
+[09:23:01] start kuiper/cut/seed1/topological_scheme_asc_event
+[09:28:01] ok   kuiper/cut/seed1/topological_scheme_asc_event (300s)
+[09:28:01] start kuiper/polar_lat75/seed1/topological_scheme_asc
+[09:30:47] ok   starlink/cut/seed1/topological_scheme_asc_event (466s)
+[09:30:47] start kuiper/polar_lat75/seed1/topological_scheme_asc_event
+[09:31:38] ok   starlink/polar_lat60/seed1/topological_scheme_asc_event (517s)
+[09:31:38] start kuiper/polar_lat60/seed1/topological_scheme_asc
+[09:31:42] ok   starlink/polar_lat75/seed1/topological_scheme_asc_event (521s)
+[09:31:42] start kuiper/polar_lat60/seed1/topological_scheme_asc_event
+[09:31:49] ok   starlink/void_b2/seed4/topological_scheme_asc_event (528s)
+[09:31:49] start kuiper/void_b2/seed1/topological_scheme_asc
+[09:31:53] ok   starlink/void_b2/seed3/topological_scheme_asc_event (532s)
+[09:31:53] start kuiper/void_b2/seed1/topological_scheme_asc_event
+[09:31:54] ok   starlink/void_b2/seed2/topological_scheme_asc_event (533s)
+[09:31:54] start kuiper/void_b2/seed2/topological_scheme_asc
+[09:31:54] ok   starlink/void_b2/seed5/topological_scheme_asc_event (533s)
+[09:31:54] start kuiper/void_b2/seed2/topological_scheme_asc_event
+[09:31:54] ok   starlink/void_b2/seed1/topological_scheme_asc_event (533s)
+[09:31:54] start kuiper/void_b2/seed3/topological_scheme_asc
+[09:31:57] ok   starlink/void_b4/seed4/topological_scheme_asc_event (536s)
+[09:31:57] start kuiper/void_b2/seed3/topological_scheme_asc_event
+[09:31:58] ok   starlink/void_b4/seed3/topological_scheme_asc_event (537s)
+[09:31:58] start kuiper/void_b2/seed4/topological_scheme_asc
+[09:31:59] ok   starlink/void_b4/seed2/topological_scheme_asc_event (538s)
+[09:31:59] start kuiper/void_b2/seed4/topological_scheme_asc_event
+[09:31:59] ok   starlink/void_b8/seed1/topological_scheme_asc_event (538s)
+[09:31:59] start kuiper/void_b2/seed5/topological_scheme_asc
+[09:32:00] ok   starlink/void_b4/seed1/topological_scheme_asc_event (539s)
+[09:32:00] start kuiper/void_b2/seed5/topological_scheme_asc_event
+[09:32:02] ok   starlink/void_b8/seed3/topological_scheme_asc_event (541s)
+[09:32:02] start kuiper/void_b4/seed1/topological_scheme_asc
+[09:32:03] ok   starlink/void_b4/seed5/topological_scheme_asc_event (542s)
+[09:32:03] start kuiper/void_b4/seed1/topological_scheme_asc_event
+[09:32:05] ok   starlink/void_b8/seed4/topological_scheme_asc_event (544s)
+[09:32:05] start kuiper/void_b4/seed2/topological_scheme_asc
+[09:32:05] ok   starlink/void_b8/seed2/topological_scheme_asc_event (544s)
+[09:32:05] start kuiper/void_b4/seed2/topological_scheme_asc_event
+[09:32:15] ok   starlink/void_b8/seed5/topological_scheme_asc_event (554s)
+[09:32:15] start kuiper/void_b4/seed3/topological_scheme_asc
+[09:36:22] ok   kuiper/polar_lat75/seed1/topological_scheme_asc_event (335s)
+[09:36:22] start kuiper/void_b4/seed3/topological_scheme_asc_event
+[09:37:15] ok   kuiper/polar_lat60/seed1/topological_scheme_asc_event (333s)
+[09:37:15] start kuiper/void_b4/seed4/topological_scheme_asc
+[09:37:39] ok   kuiper/void_b2/seed1/topological_scheme_asc_event (346s)
+[09:37:39] start kuiper/void_b4/seed4/topological_scheme_asc_event
+[09:37:39] ok   kuiper/void_b2/seed2/topological_scheme_asc_event (345s)
+[09:37:39] start kuiper/void_b4/seed5/topological_scheme_asc
+[09:37:41] ok   kuiper/void_b2/seed3/topological_scheme_asc_event (344s)
+[09:37:41] start kuiper/void_b4/seed5/topological_scheme_asc_event
+[09:37:46] ok   kuiper/void_b2/seed4/topological_scheme_asc_event (347s)
+[09:37:46] start kuiper/void_b8/seed1/topological_scheme_asc
+[09:37:48] ok   kuiper/void_b2/seed5/topological_scheme_asc_event (348s)
+[09:37:48] start kuiper/void_b8/seed1/topological_scheme_asc_event
+[09:37:51] ok   kuiper/void_b4/seed2/topological_scheme_asc_event (346s)
+[09:37:51] start kuiper/void_b8/seed2/topological_scheme_asc
+[09:37:52] ok   kuiper/void_b4/seed1/topological_scheme_asc_event (349s)
+[09:37:52] start kuiper/void_b8/seed2/topological_scheme_asc_event
+[09:39:23] ok   kuiper/cut/seed1/topological_scheme_asc (982s)
+[09:39:23] start kuiper/void_b8/seed3/topological_scheme_asc
+[09:42:12] ok   kuiper/void_b4/seed3/topological_scheme_asc_event (350s)
+[09:42:12] start kuiper/void_b8/seed3/topological_scheme_asc_event
+[09:43:30] ok   kuiper/void_b4/seed5/topological_scheme_asc_event (349s)
+[09:43:30] start kuiper/void_b8/seed4/topological_scheme_asc
+[09:43:31] ok   kuiper/void_b4/seed4/topological_scheme_asc_event (352s)
+[09:43:31] start kuiper/void_b8/seed4/topological_scheme_asc_event
+[09:43:36] ok   kuiper/void_b8/seed2/topological_scheme_asc_event (344s)
+[09:43:36] start kuiper/void_b8/seed5/topological_scheme_asc
+[09:43:49] ok   kuiper/void_b8/seed1/topological_scheme_asc_event (361s)
+[09:43:49] start kuiper/void_b8/seed5/topological_scheme_asc_event
+[09:47:59] ok   kuiper/void_b8/seed3/topological_scheme_asc_event (347s)
+[09:47:59] start oneweb/cut/seed1/topological_scheme_asc
+[09:48:21] ok   starlink/cut/seed1/topological_scheme_asc (1520s)
+[09:48:21] start oneweb/cut/seed1/topological_scheme_asc_event
+[09:49:22] ok   kuiper/void_b8/seed4/topological_scheme_asc_event (351s)
+[09:49:22] start oneweb/polar_lat75/seed1/topological_scheme_asc
+[09:49:51] ok   kuiper/void_b8/seed5/topological_scheme_asc_event (362s)
+[09:49:51] start oneweb/polar_lat75/seed1/topological_scheme_asc_event
+[09:50:52] ok   oneweb/cut/seed1/topological_scheme_asc_event (151s)
+[09:50:52] start oneweb/polar_lat60/seed1/topological_scheme_asc
+[09:53:46] ok   oneweb/cut/seed1/topological_scheme_asc (347s)
+[09:53:46] start oneweb/polar_lat60/seed1/topological_scheme_asc_event
+[09:54:16] ok   kuiper/polar_lat75/seed1/topological_scheme_asc (1575s)
+[09:54:16] start oneweb/void_b2/seed1/topological_scheme_asc
+[09:58:04] ok   kuiper/polar_lat60/seed1/topological_scheme_asc (1586s)
+[09:58:04] start oneweb/void_b2/seed1/topological_scheme_asc_event
+[09:58:22] ok   kuiper/void_b2/seed1/topological_scheme_asc (1593s)
+[09:58:22] start oneweb/void_b2/seed2/topological_scheme_asc
+[09:58:24] ok   kuiper/void_b4/seed1/topological_scheme_asc (1582s)
+[09:58:24] start oneweb/void_b2/seed2/topological_scheme_asc_event
+[09:58:26] ok   kuiper/void_b2/seed2/topological_scheme_asc (1592s)
+[09:58:26] start oneweb/void_b2/seed3/topological_scheme_asc
+[09:58:26] ok   kuiper/void_b2/seed3/topological_scheme_asc (1592s)
+[09:58:26] start oneweb/void_b2/seed3/topological_scheme_asc_event
+[09:58:27] ok   kuiper/void_b4/seed2/topological_scheme_asc (1582s)
+[09:58:27] start oneweb/void_b2/seed4/topological_scheme_asc
+[09:58:39] ok   kuiper/void_b4/seed3/topological_scheme_asc (1584s)
+[09:58:39] start oneweb/void_b2/seed4/topological_scheme_asc_event
+[09:58:45] ok   kuiper/void_b2/seed4/topological_scheme_asc (1607s)
+[09:58:45] start oneweb/void_b2/seed5/topological_scheme_asc
+[09:59:13] ok   kuiper/void_b2/seed5/topological_scheme_asc (1634s)
+[09:59:13] start oneweb/void_b2/seed5/topological_scheme_asc_event
+[10:00:04] ok   oneweb/polar_lat75/seed1/topological_scheme_asc (642s)
+[10:00:04] start oneweb/void_b4/seed1/topological_scheme_asc
+[10:00:28] ok   oneweb/polar_lat75/seed1/topological_scheme_asc_event (637s)
+[10:00:28] start oneweb/void_b4/seed1/topological_scheme_asc_event
+[10:01:01] ok   oneweb/void_b2/seed1/topological_scheme_asc_event (177s)
+[10:01:01] start oneweb/void_b4/seed2/topological_scheme_asc
+[10:01:20] ok   oneweb/void_b2/seed2/topological_scheme_asc_event (176s)
+[10:01:20] start oneweb/void_b4/seed2/topological_scheme_asc_event
+[10:01:20] ok   oneweb/void_b2/seed3/topological_scheme_asc_event (174s)
+[10:01:20] start oneweb/void_b4/seed3/topological_scheme_asc
+[10:01:37] ok   oneweb/void_b2/seed4/topological_scheme_asc_event (178s)
+[10:01:37] start oneweb/void_b4/seed3/topological_scheme_asc_event
+[10:02:09] ok   oneweb/void_b2/seed5/topological_scheme_asc_event (176s)
+[10:02:09] start oneweb/void_b4/seed4/topological_scheme_asc
+[10:02:43] ok   oneweb/polar_lat60/seed1/topological_scheme_asc (711s)
+[10:02:43] start oneweb/void_b4/seed4/topological_scheme_asc_event
+[10:03:00] ok   kuiper/void_b8/seed1/topological_scheme_asc (1514s)
+[10:03:00] start oneweb/void_b4/seed5/topological_scheme_asc
+[10:03:06] ok   kuiper/void_b8/seed2/topological_scheme_asc (1515s)
+[10:03:06] start oneweb/void_b4/seed5/topological_scheme_asc_event
+[10:03:15] ok   starlink/void_b8/seed3/topological_scheme_asc (2414s)
+[10:03:15] start oneweb/void_b8/seed1/topological_scheme_asc
+[10:03:18] ok   oneweb/void_b2/seed1/topological_scheme_asc (542s)
+[10:03:18] start oneweb/void_b8/seed1/topological_scheme_asc_event
+[10:03:18] ok   starlink/void_b8/seed4/topological_scheme_asc (2417s)
+[10:03:18] start oneweb/void_b8/seed2/topological_scheme_asc
+[10:03:25] ok   oneweb/void_b4/seed1/topological_scheme_asc_event (177s)
+[10:03:25] start oneweb/void_b8/seed2/topological_scheme_asc_event
+[10:03:27] ok   starlink/void_b8/seed1/topological_scheme_asc (2426s)
+[10:03:27] start oneweb/void_b8/seed3/topological_scheme_asc
+[10:03:29] ok   starlink/void_b8/seed5/topological_scheme_asc (2428s)
+[10:03:29] start oneweb/void_b8/seed3/topological_scheme_asc_event
+[10:03:45] ok   kuiper/void_b4/seed4/topological_scheme_asc (1590s)
+[10:03:45] start oneweb/void_b8/seed4/topological_scheme_asc
+[10:03:46] ok   starlink/void_b8/seed2/topological_scheme_asc (2445s)
+[10:03:46] start oneweb/void_b8/seed4/topological_scheme_asc_event
+[10:04:00] ok   kuiper/void_b4/seed5/topological_scheme_asc (1581s)
+[10:04:00] start oneweb/void_b8/seed5/topological_scheme_asc
+[10:04:08] ok   starlink/void_b4/seed1/topological_scheme_asc (2467s)
+[10:04:08] start oneweb/void_b8/seed5/topological_scheme_asc_event
+[10:04:11] ok   starlink/polar_lat60/seed1/topological_scheme_asc (2470s)
+[10:04:11] start telesat/cut/seed1/topological_scheme_asc
+[10:04:13] ok   kuiper/void_b8/seed3/topological_scheme_asc (1490s)
+[10:04:13] start telesat/cut/seed1/topological_scheme_asc_event
+[10:04:20] ok   oneweb/void_b4/seed2/topological_scheme_asc_event (180s)
+[10:04:20] start telesat/polar_lat75/seed1/topological_scheme_asc
+[10:04:22] ok   starlink/void_b4/seed3/topological_scheme_asc (2481s)
+[10:04:22] start telesat/polar_lat75/seed1/topological_scheme_asc_event
+[10:04:31] ok   starlink/polar_lat75/seed1/topological_scheme_asc (2490s)
+[10:04:31] start telesat/polar_lat60/seed1/topological_scheme_asc
+[10:04:33] ok   starlink/void_b4/seed4/topological_scheme_asc (2492s)
+[10:04:33] start telesat/polar_lat60/seed1/topological_scheme_asc_event
+[10:04:35] ok   oneweb/void_b4/seed3/topological_scheme_asc_event (178s)
+[10:04:35] start telesat/void_b2/seed1/topological_scheme_asc
+[10:04:37] ok   starlink/void_b2/seed5/topological_scheme_asc (2496s)
+[10:04:37] start telesat/void_b2/seed1/topological_scheme_asc_event
+[10:04:37] ok   starlink/void_b4/seed2/topological_scheme_asc (2496s)
+[10:04:37] start telesat/void_b2/seed2/topological_scheme_asc
+[10:04:38] ok   starlink/void_b2/seed1/topological_scheme_asc (2497s)
+[10:04:38] start telesat/void_b2/seed2/topological_scheme_asc_event
+[10:04:50] ok   starlink/void_b4/seed5/topological_scheme_asc (2509s)
+[10:04:50] start telesat/void_b2/seed3/topological_scheme_asc
+[10:04:53] ok   starlink/void_b2/seed2/topological_scheme_asc (2512s)
+[10:04:53] start telesat/void_b2/seed3/topological_scheme_asc_event
+[10:05:10] ok   starlink/void_b2/seed4/topological_scheme_asc (2529s)
+[10:05:10] start telesat/void_b2/seed4/topological_scheme_asc
+[10:05:12] ok   starlink/void_b2/seed3/topological_scheme_asc (2531s)
+[10:05:12] start telesat/void_b2/seed4/topological_scheme_asc_event
+[10:05:15] ok   oneweb/polar_lat60/seed1/topological_scheme_asc_event (689s)
+[10:05:16] start telesat/void_b2/seed5/topological_scheme_asc
+[10:05:34] ok   telesat/cut/seed1/topological_scheme_asc_event (81s)
+[10:05:34] start telesat/void_b2/seed5/topological_scheme_asc_event
+[10:05:39] ok   oneweb/void_b4/seed4/topological_scheme_asc_event (176s)
+[10:05:39] start telesat/void_b4/seed1/topological_scheme_asc
+[10:06:06] ok   oneweb/void_b4/seed5/topological_scheme_asc_event (180s)
+[10:06:06] start telesat/void_b4/seed1/topological_scheme_asc_event
+[10:06:09] ok   telesat/void_b2/seed1/topological_scheme_asc_event (92s)
+[10:06:09] start telesat/void_b4/seed2/topological_scheme_asc
+[10:06:10] ok   telesat/void_b2/seed2/topological_scheme_asc_event (92s)
+[10:06:10] start telesat/void_b4/seed2/topological_scheme_asc_event
+[10:06:18] ok   oneweb/void_b8/seed1/topological_scheme_asc_event (180s)
+[10:06:18] start telesat/void_b4/seed3/topological_scheme_asc
+[10:06:24] ok   oneweb/void_b8/seed2/topological_scheme_asc_event (179s)
+[10:06:24] start telesat/void_b4/seed3/topological_scheme_asc_event
+[10:06:25] ok   telesat/void_b2/seed3/topological_scheme_asc_event (92s)
+[10:06:25] start telesat/void_b4/seed4/topological_scheme_asc
+[10:06:27] ok   oneweb/void_b8/seed3/topological_scheme_asc_event (178s)
+[10:06:27] start telesat/void_b4/seed4/topological_scheme_asc_event
+[10:06:27] ok   telesat/cut/seed1/topological_scheme_asc (136s)
+[10:06:27] start telesat/void_b4/seed5/topological_scheme_asc
+[10:06:43] ok   oneweb/void_b8/seed4/topological_scheme_asc_event (177s)
+[10:06:43] start telesat/void_b4/seed5/topological_scheme_asc_event
+[10:06:44] ok   telesat/void_b2/seed4/topological_scheme_asc_event (92s)
+[10:06:44] start telesat/void_b8/seed1/topological_scheme_asc
+[10:07:01] ok   oneweb/void_b8/seed5/topological_scheme_asc_event (173s)
+[10:07:01] start telesat/void_b8/seed1/topological_scheme_asc_event
+[10:07:06] ok   telesat/void_b2/seed5/topological_scheme_asc_event (92s)
+[10:07:06] start telesat/void_b8/seed2/topological_scheme_asc
+[10:07:14] ok   telesat/polar_lat75/seed1/topological_scheme_asc_event (172s)
+[10:07:14] start telesat/void_b8/seed2/topological_scheme_asc_event
+[10:07:17] ok   oneweb/void_b2/seed2/topological_scheme_asc (535s)
+[10:07:17] start telesat/void_b8/seed3/topological_scheme_asc
+[10:07:25] ok   telesat/polar_lat60/seed1/topological_scheme_asc_event (172s)
+[10:07:25] start telesat/void_b8/seed3/topological_scheme_asc_event
+[10:07:28] ok   oneweb/void_b2/seed3/topological_scheme_asc (542s)
+[10:07:28] start telesat/void_b8/seed4/topological_scheme_asc
+[10:07:36] ok   oneweb/void_b2/seed4/topological_scheme_asc (549s)
+[10:07:36] start telesat/void_b8/seed4/topological_scheme_asc_event
+[10:07:39] ok   telesat/void_b4/seed1/topological_scheme_asc_event (93s)
+[10:07:39] start telesat/void_b8/seed5/topological_scheme_asc
+[10:07:41] ok   telesat/void_b4/seed2/topological_scheme_asc_event (91s)
+[10:07:41] start telesat/void_b8/seed5/topological_scheme_asc_event
+[10:07:42] ok   oneweb/void_b2/seed5/topological_scheme_asc (537s)
+[10:07:44] ok   telesat/void_b2/seed1/topological_scheme_asc (189s)
+[10:07:44] ok   telesat/void_b2/seed2/topological_scheme_asc (187s)
+[10:07:55] ok   telesat/void_b4/seed3/topological_scheme_asc_event (91s)
+[10:07:57] ok   telesat/void_b2/seed3/topological_scheme_asc (187s)
+[10:07:59] ok   telesat/void_b4/seed4/topological_scheme_asc_event (92s)
+[10:08:06] ok   telesat/polar_lat75/seed1/topological_scheme_asc (226s)
+[10:08:15] ok   telesat/void_b4/seed5/topological_scheme_asc_event (92s)
+[10:08:17] ok   kuiper/void_b8/seed4/topological_scheme_asc (1487s)
+[10:08:18] ok   telesat/void_b2/seed4/topological_scheme_asc (188s)
+[10:08:21] ok   kuiper/void_b8/seed5/topological_scheme_asc (1485s)
+[10:08:22] ok   telesat/void_b2/seed5/topological_scheme_asc (186s)
+[10:08:27] ok   telesat/void_b8/seed1/topological_scheme_asc_event (86s)
+[10:08:33] ok   telesat/polar_lat60/seed1/topological_scheme_asc (242s)
+[10:08:39] ok   telesat/void_b8/seed2/topological_scheme_asc_event (85s)
+[10:08:42] ok   telesat/void_b4/seed1/topological_scheme_asc (183s)
+[10:08:46] ok   oneweb/void_b4/seed1/topological_scheme_asc (522s)
+[10:08:48] ok   telesat/void_b8/seed3/topological_scheme_asc_event (83s)
+[10:08:58] ok   telesat/void_b8/seed4/topological_scheme_asc_event (82s)
+[10:09:04] ok   telesat/void_b8/seed5/topological_scheme_asc_event (83s)
+[10:09:04] ok   telesat/void_b4/seed2/topological_scheme_asc (175s)
+[10:09:11] ok   telesat/void_b4/seed3/topological_scheme_asc (173s)
+[10:09:13] ok   telesat/void_b8/seed1/topological_scheme_asc (149s)
+[10:09:20] ok   telesat/void_b4/seed4/topological_scheme_asc (175s)
+[10:09:21] ok   telesat/void_b4/seed5/topological_scheme_asc (174s)
+[10:09:37] ok   oneweb/void_b4/seed2/topological_scheme_asc (516s)
+[10:09:38] ok   telesat/void_b8/seed2/topological_scheme_asc (152s)
+[10:09:41] ok   telesat/void_b8/seed3/topological_scheme_asc (144s)
+[10:09:46] ok   oneweb/void_b4/seed3/topological_scheme_asc (506s)
+[10:09:53] ok   telesat/void_b8/seed4/topological_scheme_asc (145s)
+[10:10:03] ok   telesat/void_b8/seed5/topological_scheme_asc (144s)
+[10:10:29] ok   oneweb/void_b4/seed4/topological_scheme_asc (500s)
+[10:10:50] ok   oneweb/void_b8/seed2/topological_scheme_asc (452s)
+[10:10:50] ok   oneweb/void_b8/seed3/topological_scheme_asc (443s)
+[10:10:55] ok   oneweb/void_b8/seed1/topological_scheme_asc (460s)
+[10:11:17] ok   oneweb/void_b8/seed4/topological_scheme_asc (452s)
+[10:11:17] ok   oneweb/void_b8/seed5/topological_scheme_asc (437s)
+[10:11:19] ok   oneweb/void_b4/seed5/topological_scheme_asc (499s)
+=== Mon Oct  5 10:11:19 CEST 2026 failure sweep done ===
+all jobs exited 0
+=== Mon Oct  5 10:11:19 CEST 2026 failure sweep start: JOBS=38 image=leopath:event-dev out=/home/apino/event-sweep ===
+    grid, 1h at 1min steps, seeds: 1 2 3 4 5
+[10:11:19] start starlink/isl_p0.01/seed1/topological_scheme_asc_event
+[10:11:19] start starlink/isl_p0.01/seed2/topological_scheme_asc_event
+[10:11:19] start starlink/isl_p0.01/seed3/topological_scheme_asc_event
+[10:11:19] start starlink/isl_p0.01/seed4/topological_scheme_asc_event
+[10:11:19] start starlink/isl_p0.01/seed5/topological_scheme_asc_event
+[10:11:19] start starlink/sat_p0.005/seed1/topological_scheme_asc_event
+[10:11:19] start starlink/sat_p0.005/seed2/topological_scheme_asc_event
+[10:11:19] start starlink/sat_p0.005/seed3/topological_scheme_asc_event
+[10:11:19] start starlink/sat_p0.005/seed4/topological_scheme_asc_event
+[10:11:19] start starlink/sat_p0.005/seed5/topological_scheme_asc_event
+[10:11:19] start kuiper/isl_p0.01/seed1/topological_scheme_asc_event
+[10:11:19] start kuiper/isl_p0.01/seed2/topological_scheme_asc_event
+[10:11:19] start kuiper/isl_p0.01/seed3/topological_scheme_asc_event
+[10:11:19] start kuiper/isl_p0.01/seed4/topological_scheme_asc_event
+[10:11:19] start kuiper/isl_p0.01/seed5/topological_scheme_asc_event
+[10:11:19] start kuiper/sat_p0.005/seed1/topological_scheme_asc_event
+[10:11:19] start kuiper/sat_p0.005/seed2/topological_scheme_asc_event
+[10:11:19] start kuiper/sat_p0.005/seed3/topological_scheme_asc_event
+[10:11:19] start kuiper/sat_p0.005/seed4/topological_scheme_asc_event
+[10:11:19] start kuiper/sat_p0.005/seed5/topological_scheme_asc_event
+[10:11:19] start oneweb/isl_p0.01/seed1/topological_scheme_asc_event
+[10:11:19] start oneweb/isl_p0.01/seed2/topological_scheme_asc_event
+[10:11:19] start oneweb/isl_p0.01/seed3/topological_scheme_asc_event
+[10:11:19] start oneweb/isl_p0.01/seed4/topological_scheme_asc_event
+[10:11:19] start oneweb/isl_p0.01/seed5/topological_scheme_asc_event
+[10:11:19] start oneweb/sat_p0.005/seed1/topological_scheme_asc_event
+[10:11:19] start oneweb/sat_p0.005/seed2/topological_scheme_asc_event
+[10:11:19] start oneweb/sat_p0.005/seed3/topological_scheme_asc_event
+[10:11:19] start oneweb/sat_p0.005/seed4/topological_scheme_asc_event
+[10:11:19] start oneweb/sat_p0.005/seed5/topological_scheme_asc_event
+[10:11:19] start telesat/isl_p0.01/seed1/topological_scheme_asc_event
+[10:11:19] start telesat/isl_p0.01/seed2/topological_scheme_asc_event
+[10:11:19] start telesat/isl_p0.01/seed3/topological_scheme_asc_event
+[10:11:19] start telesat/isl_p0.01/seed4/topological_scheme_asc_event
+[10:11:19] start telesat/isl_p0.01/seed5/topological_scheme_asc_event
+[10:11:19] start telesat/sat_p0.005/seed1/topological_scheme_asc_event
+[10:11:19] start telesat/sat_p0.005/seed2/topological_scheme_asc_event
+[10:11:19] start telesat/sat_p0.005/seed3/topological_scheme_asc_event
+[10:12:57] ok   telesat/sat_p0.005/seed3/topological_scheme_asc_event (98s)
+[10:12:57] start telesat/sat_p0.005/seed4/topological_scheme_asc_event
+[10:13:00] ok   telesat/sat_p0.005/seed2/topological_scheme_asc_event (101s)
+[10:13:00] start telesat/sat_p0.005/seed5/topological_scheme_asc_event
+[10:13:01] ok   telesat/sat_p0.005/seed1/topological_scheme_asc_event (102s)
+[10:14:01] ok   telesat/isl_p0.01/seed3/topological_scheme_asc_event (162s)
+[10:14:05] ok   telesat/isl_p0.01/seed2/topological_scheme_asc_event (166s)
+[10:14:11] ok   telesat/isl_p0.01/seed4/topological_scheme_asc_event (172s)
+[10:14:12] ok   telesat/isl_p0.01/seed5/topological_scheme_asc_event (173s)
+[10:14:20] ok   telesat/isl_p0.01/seed1/topological_scheme_asc_event (181s)
+[10:14:29] ok   oneweb/sat_p0.005/seed3/topological_scheme_asc_event (190s)
+[10:14:33] ok   oneweb/sat_p0.005/seed4/topological_scheme_asc_event (194s)
+[10:14:35] ok   telesat/sat_p0.005/seed4/topological_scheme_asc_event (98s)
+[10:14:40] ok   oneweb/sat_p0.005/seed1/topological_scheme_asc_event (201s)
+[10:14:41] ok   telesat/sat_p0.005/seed5/topological_scheme_asc_event (101s)
+[10:14:55] ok   oneweb/sat_p0.005/seed5/topological_scheme_asc_event (216s)
+[10:15:01] ok   oneweb/sat_p0.005/seed2/topological_scheme_asc_event (222s)
+[10:18:56] ok   oneweb/isl_p0.01/seed3/topological_scheme_asc_event (457s)
+[10:19:09] ok   oneweb/isl_p0.01/seed1/topological_scheme_asc_event (470s)
+[10:19:30] ok   kuiper/sat_p0.005/seed4/topological_scheme_asc_event (491s)
+[10:19:41] ok   oneweb/isl_p0.01/seed5/topological_scheme_asc_event (502s)
+[10:19:41] ok   oneweb/isl_p0.01/seed4/topological_scheme_asc_event (502s)
+[10:19:43] ok   oneweb/isl_p0.01/seed2/topological_scheme_asc_event (504s)
+[10:19:47] ok   kuiper/sat_p0.005/seed3/topological_scheme_asc_event (508s)
+[10:20:25] ok   kuiper/sat_p0.005/seed2/topological_scheme_asc_event (546s)
+[10:21:09] ok   kuiper/sat_p0.005/seed1/topological_scheme_asc_event (590s)
+[10:22:48] ok   kuiper/sat_p0.005/seed5/topological_scheme_asc_event (689s)
+[10:23:58] ok   starlink/sat_p0.005/seed3/topological_scheme_asc_event (759s)
+[10:25:50] ok   starlink/sat_p0.005/seed1/topological_scheme_asc_event (871s)
+[10:26:02] ok   starlink/sat_p0.005/seed2/topological_scheme_asc_event (883s)
+[10:26:45] ok   starlink/sat_p0.005/seed5/topological_scheme_asc_event (926s)
+[10:27:54] ok   starlink/sat_p0.005/seed4/topological_scheme_asc_event (995s)
+[10:35:00] ok   kuiper/isl_p0.01/seed5/topological_scheme_asc_event (1421s)
+[10:35:07] ok   kuiper/isl_p0.01/seed1/topological_scheme_asc_event (1428s)
+[10:35:11] ok   kuiper/isl_p0.01/seed4/topological_scheme_asc_event (1432s)
+[10:35:12] ok   kuiper/isl_p0.01/seed3/topological_scheme_asc_event (1433s)
+[10:35:22] ok   kuiper/isl_p0.01/seed2/topological_scheme_asc_event (1443s)
+[10:47:35] ok   starlink/isl_p0.01/seed5/topological_scheme_asc_event (2176s)
+[10:48:01] ok   starlink/isl_p0.01/seed2/topological_scheme_asc_event (2202s)
+[10:48:13] ok   starlink/isl_p0.01/seed1/topological_scheme_asc_event (2214s)
+[10:48:43] ok   starlink/isl_p0.01/seed4/topological_scheme_asc_event (2244s)
+[10:49:56] ok   starlink/isl_p0.01/seed3/topological_scheme_asc_event (2317s)
+=== Mon Oct  5 10:49:56 CEST 2026 failure sweep done ===
+all jobs exited 0
