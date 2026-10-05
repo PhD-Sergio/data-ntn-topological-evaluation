@@ -303,6 +303,28 @@ Supporting runs for the exception rule: entries added and removed between snapsh
 spends computing entries after a failure (`exception_grow_work_raw/`), and the one-pass rule
 compared with the grow rule the paper uses (`exception_one_pass/`, image `leopath:final-1p`).
 
+## `fib_churn/`
+
+Churn of a full link-state forwarding table (Section 4.5 and Table 8 of the revised
+manuscript). A link-state satellite keyed on satellite addresses holds one route to every
+satellite; a station handover changes none of them, but the motion of the shell does,
+because link lengths change. `scripts/fib_churn.py` builds the simulator's ISL graph at
+each snapshot with LEOPath's own `_build_topologies`/`_compute_isls` (ISL weight = length),
+computes the next hop from every satellite toward every other one with Dijkstra, and
+counts per satellite the destinations whose next hop changed since the previous snapshot.
+Four constellations, +Grid and the open seam, no failures; one-minute steps over six
+hours, plus 10 s over one hour and 5 min over six hours on +Grid. Run on
+`6genablers-dlt-1` with image `leopath:final-dev` (LEOPath tag `image-final-dev`), e.g.
+
+    docker run --rm --entrypoint python -v $PWD:/work -w /work/wd leopath:final-dev \
+      /work/scripts/fib_churn.py --config /app/leopath/config/starlink.yaml \
+      --isl grid --hours 6 --step-minutes 1 --out /work/revision/fib_churn/starlink_grid_1m
+
+`summary.csv` collects the per-run means: 12.0 to 64.8 route changes per satellite and
+minute on +Grid (3.4 to 4.1% of the table), 12.0 to 61.8 on the seam, and 718 to 4 909
+per satellite and hour whatever the sampling interval. Each run also has a per-snapshot
+CSV and a JSON summary.
+
 ## Regenerating the figures
 
 `scripts/plot_story_figures.py` draws the figures of the revised manuscript from this

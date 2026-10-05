@@ -1,0 +1,17 @@
+shell,isl,sampling,satellites,snapshots,changes_per_sat_per_snapshot,changes_per_sat_per_hour,changed_share
+kuiper,grid,10s,1156,360,7.91,2847,0.0068
+kuiper,grid,1m,1156,360,46.61,2797,0.0404
+kuiper,grid,5m,1156,72,218.99,2628,0.1896
+kuiper,grid_seam,1m,1156,360,48.24,2894,0.0418
+oneweb,grid,10s,588,360,3.33,1197,0.0057
+oneweb,grid,1m,588,360,19.85,1191,0.0338
+oneweb,grid,5m,588,72,93.47,1122,0.1592
+oneweb,grid_seam,1m,588,360,19.85,1191,0.0338
+starlink,grid,10s,1584,360,13.63,4909,0.0086
+starlink,grid,1m,1584,360,64.78,3887,0.0409
+starlink,grid,5m,1584,72,306.31,3676,0.1935
+starlink,grid_seam,1m,1584,360,61.77,3706,0.039
+telesat,grid,10s,351,360,2.01,723,0.0057
+telesat,grid,1m,351,360,12.0,720,0.0343
+telesat,grid,5m,351,72,59.8,718,0.1709
+telesat,grid_seam,1m,351,360,11.98,719,0.0342

@@ -1,0 +1,13 @@
+{
+  "config": "Telesat-synthetic",
+  "isl": "grid",
+  "satellites": 351,
+  "snapshots": 72,
+  "step_minutes": 5.0,
+  "changes_per_sat_per_snapshot_mean": 59.79804181212632,
+  "changes_per_sat_per_snapshot_p95": 70.7863247863248,
+  "changes_per_sat_per_snapshot_max_step": 71.36467236467236,
+  "changes_per_sat_max_single": 213,
+  "changed_share_mean": 0.1708515480346466,
+  "wall_seconds": 4.188143730163574
+}

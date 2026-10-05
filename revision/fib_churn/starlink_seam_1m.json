@@ -1,0 +1,13 @@
+{
+  "config": "Starlink-550",
+  "isl": "grid_seam",
+  "satellites": 1584,
+  "snapshots": 360,
+  "step_minutes": 1.0,
+  "changes_per_sat_per_snapshot_mean": 61.767029627753864,
+  "changes_per_sat_per_snapshot_p95": 198.364898989899,
+  "changes_per_sat_per_snapshot_max_step": 199.1824494949495,
+  "changes_per_sat_max_single": 852,
+  "changed_share_mean": 0.03901897007438652,
+  "wall_seconds": 208.8986692428589
+}

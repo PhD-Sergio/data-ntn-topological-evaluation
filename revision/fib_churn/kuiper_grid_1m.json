@@ -1,0 +1,13 @@
+{
+  "config": "Kuiper-synthetic",
+  "isl": "grid",
+  "satellites": 1156,
+  "snapshots": 360,
+  "step_minutes": 1.0,
+  "changes_per_sat_per_snapshot_mean": 46.61030496091605,
+  "changes_per_sat_per_snapshot_p95": 98.26617647058823,
+  "changes_per_sat_per_snapshot_max_step": 98.38235294117646,
+  "changes_per_sat_max_single": 595,
+  "changed_share_mean": 0.040355242390403494,
+  "wall_seconds": 137.5887370109558
+}

@@ -1,0 +1,13 @@
+{
+  "config": "OneWeb-synthetic",
+  "isl": "grid",
+  "satellites": 588,
+  "snapshots": 72,
+  "step_minutes": 5.0,
+  "changes_per_sat_per_snapshot_mean": 93.46682475807224,
+  "changes_per_sat_per_snapshot_p95": 94.05442176870748,
+  "changes_per_sat_per_snapshot_max_step": 94.08843537414965,
+  "changes_per_sat_max_single": 484,
+  "changed_share_mean": 0.1592279808485047,
+  "wall_seconds": 7.642826557159424
+}
