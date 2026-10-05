@@ -488,6 +488,81 @@ def plot_packet_forwarding_information(headline: dict) -> None:
     plt.close(fig)
 
 
+def plot_state_scaling_and_churn(shell_csv: Path, churn_csv: Path) -> None:
+    """State held per satellite against shell size on the eleven filed shells, and
+    routes rewritten per satellite and minute by a full link-state table on the four
+    evaluated shells (+Grid, no failures, one-minute steps). Station bindings, which
+    both families hold alike, are left out of both panels."""
+    with shell_csv.open() as handle:
+        shells = sorted(csv.DictReader(handle), key=lambda r: int(r["sats"]))
+    with churn_csv.open() as handle:
+        churn = {
+            r["shell"]: float(r["changes_per_sat_per_snapshot"])
+            for r in csv.DictReader(handle)
+            if r["isl"] == "grid" and r["sampling"] == "1m"
+        }
+    sats = np.array([int(r["sats"]) for r in shells])
+    lsdb = np.array([float(r["ls_lsdb_entries"]) for r in shells])
+    constants = np.array([float(r["derived_required"]) for r in shells])
+    neighbors = 4
+
+    fig, axes = plt.subplots(1, 2, figsize=(8.2, 3.4), gridspec_kw={"width_ratios": [1.2, 1.0]})
+    ax = axes[0]
+    # Shells of equal size hold the same per-satellite state, so draw one point per size.
+    sizes = np.unique(sats)
+    lsdb_by = np.array([lsdb[sats == n].mean() for n in sizes])
+    topo_by = np.array([constants[sats == n].mean() + neighbors for n in sizes])
+    routes_by = sizes - 1
+    series = [
+        (lsdb_by, "o", COLORS["link_state"], "-", "Link-state database", 2.0e4, "bottom"),
+        (routes_by, "s", COLORS["link_state"], "--", "Link-state routes ($N-1$)", 2.2e2, "top"),
+        (topo_by, "D", COLORS["topological"], "-",
+         f"Topological: {int(constants[0])} constants + {neighbors} neighbors", 16, "bottom"),
+    ]
+    for ys, marker, color, style, label, label_y, va in series:
+        ax.plot(sizes, ys, linestyle=style, marker=marker, color=color, markersize=4.5, linewidth=1.6)
+        ax.text(sizes[0], label_y, label, color=color, fontsize=9.5, ha="left", va=va)
+    # Gap between the link-state table and topological state at the largest shell.
+    n_max, routes_max, topo_max = sizes[-1], routes_by[-1], topo_by[-1]
+    ax.annotate(
+        "", xy=(n_max + 170, topo_max), xytext=(n_max + 170, routes_max),
+        arrowprops={"arrowstyle": "<->", "color": "0.35", "linewidth": 1.0},
+    )
+    ax.text(n_max + 230, np.sqrt(routes_max * topo_max), f"{routes_max / topo_max:.0f}\N{MULTIPLICATION SIGN}",
+            fontsize=10, va="center", ha="left", color="0.25")
+    ax.set_yscale("log")
+    ax.set_ylim(5, 60000)
+    ax.set_xlim(0, 4300)
+    ax.set_xlabel("Satellites in the shell, $N$")
+    ax.set_ylabel("Routing information per satellite\n(entries)")
+    ax.set_title("(a) State on eleven filed shells")
+    ax.grid(True, axis="y", which="major", alpha=0.22)
+
+    ax = axes[1]
+    order = ["telesat", "oneweb", "kuiper", "starlink"]
+    names = ["Telesat", "OneWeb", "Kuiper", "Starlink"]
+    x = np.arange(len(order))
+    width = 0.38
+    ls_values = [churn[s] for s in order]
+    bars = ax.bar(x - width / 2, ls_values, width=width, color=COLORS["link_state"], label="Link-state, full table")
+    ax.bar(x + width / 2, [0.0] * len(order), width=width, color=COLORS["topological"], label="Topological")
+    for bar in bars:
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 1.2, f"{bar.get_height():.1f}",
+                ha="center", va="bottom", fontsize=9)
+    for xx in x:
+        ax.text(xx + width / 2, 1.2, "0", ha="center", va="bottom", fontsize=9, color=COLORS["topological"])
+    ax.set_xticks(x)
+    ax.set_xticklabels(names)
+    ax.set_ylim(0, 78)
+    ax.set_ylabel("Routes rewritten per satellite-minute")
+    ax.set_title("(b) Route rewrites as the shell moves")
+    ax.grid(True, axis="y", alpha=0.22)
+    ax.legend(loc="upper left", frameon=True, fancybox=False, edgecolor="0.6", framealpha=1.0, fontsize=9)
+    fig.tight_layout(w_pad=2.4)
+    fig.savefig(FIGURE_DIR / "state_scaling_churn.png", bbox_inches="tight")
+    plt.close(fig)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Regenerate the paper figures")
     parser.add_argument(
@@ -520,6 +595,18 @@ def main() -> None:
         default=None,
         help="brick-wall matrix_runs.csv, added to the footprint next to +Grid",
     )
+    parser.add_argument(
+        "--shell-scaling",
+        type=Path,
+        default=None,
+        help="shell_scaling/per_shell_state.csv; with --fib-churn draws the state-scaling and churn figure",
+    )
+    parser.add_argument(
+        "--fib-churn",
+        type=Path,
+        default=None,
+        help="fib_churn/summary.csv (full link-state table churn)",
+    )
     args = parser.parse_args()
     global FIGURE_DIR
     if args.output_dir is not None:
@@ -543,6 +630,8 @@ def main() -> None:
     plot_constellation_robustness(fstate_by_isl, updates_by_isl)
     if args.failure_sweep is not None:
         plot_failure_exception_state(args.failure_sweep)
+    if args.shell_scaling is not None and args.fib_churn is not None:
+        plot_state_scaling_and_churn(args.shell_scaling, args.fib_churn)
     plot_explicit_sensitivity(headline, strict)
     plot_packet_forwarding_information(headline)
     print(f"figures written to {FIGURE_DIR} from {args.summaries}")

@@ -362,11 +362,16 @@ dataset alone (the paper's copies are byte-identical):
 python scripts/plot_story_figures.py --summaries revision/figure_inputs \
     --final-matrix revision/final_matrix/matrix_runs.csv \
     --brick-matrix revision/brick_wall_matrix/matrix_runs.csv \
-    --failure-sweep revision/exception_entries_final --output-dir figures
+    --failure-sweep revision/exception_entries_final \
+    --shell-scaling revision/shell_scaling/per_shell_state.csv \
+    --fib-churn revision/fib_churn/summary.csv --output-dir figures
 ```
 
-Figure 11 is `evaluation_resource_footprint.png`, Figure 12 `explicit_path_sensitivity.png`
-and Figure 15 `failure_exception_state.png`. `revision/figure_inputs/` holds the two
+Figure 11 is `evaluation_resource_footprint.png`, Figure 12 `state_scaling_churn.png`,
+Figure 13 `explicit_path_sensitivity.png` and Figure 15 `failure_exception_state.png`.
+Figure 12 reads `shell_scaling/per_shell_state.csv` (link-state database records and the
+seven constants per filed shell; routes are N - 1) and `fib_churn/summary.csv` (+Grid,
+one-minute sampling). `revision/figure_inputs/` holds the two
 summaries the explicit-path figure reads: `headline/` (identical to
 `revision/state_accounting/matrix_runs.csv`) and `explicit_strict_r3/` (strict R = 3 runs,
 `sna-12:~/sergio-explicit-strict`, image `leopath:dra-dev`).
